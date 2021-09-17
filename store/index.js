@@ -2075,11 +2075,3 @@ export const actions = {
     commit('SET_TODAY', today)
   }
 }
-
-
-// "scripts": {
-//   "dev": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js",
-//   "build": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js build",
-//   "start": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js start",
-//   "generate": "nuxt generate"
-// },

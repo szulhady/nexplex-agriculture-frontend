@@ -348,25 +348,25 @@ export default {
     updatedDate: function() {
       if (this.updatedDate == true) {
         console.log("here");
-        this.client.publish("debug/test/database/ipah1", "updated");
+        // this.client.publish("debug/test/database/ipah1", "updated");
       }
     },
     updatedDate2: function() {
       if (this.updatedDate2 == true) {
         console.log("here2");
-        this.client.publish("debug/test/database/ipah2", "updated");
+        // this.client.publish("debug/test/database/ipah2", "updated");
       }
     },
     updatedDate3: function() {
       if (this.updatedDate3 == true) {
         console.log("here2");
-        this.client.publish("debug/test/database/tkpmPagoh", "updated");
+        // this.client.publish("debug/test/database/tkpmPagoh", "updated");
       }
     },
     updatedDate4: function() {
       if (this.updatedDate4 == true) {
         console.log("here2");
-        this.client.publish("debug/test/database/kongPo", "updated");
+        // this.client.publish("debug/test/database/kongPo", "updated");
       }
     }
   }

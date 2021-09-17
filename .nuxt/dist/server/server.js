@@ -10345,12 +10345,7 @@ const actions = {
     commit('SET_TODAY', today);
   }
 
-}; // "scripts": {
-//   "dev": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js",
-//   "build": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js build",
-//   "start": "node --max-old-space-size=4096 node_modules/nuxt/bin/nuxt.js start",
-//   "generate": "nuxt generate"
-// },
+};
 
 /***/ }),
 /* 145 */
@@ -14945,12 +14940,12 @@ var login_component = Object(componentNormalizer["a" /* default */])(
 
 installComponents_default()(login_component, {VMain: VMain_VMain})
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/status.vue?vue&type=template&id=14f084ab&
-var statusvue_type_template_id_14f084ab_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-navigation-drawer',{staticClass:"sidebar",attrs:{"fixed":"","app":"","temporary":""},model:{value:(_vm.drawer),callback:function ($$v) {_vm.drawer=$$v},expression:"drawer"}},[_c('div',{staticClass:"brand"},[_c('img',{staticClass:"brand-logo",attrs:{"src":"nex-plex-h.png","alt":"nex-plex-logo"}})]),_vm._v(" "),_c('hr',{staticClass:"horizontal-line"}),_vm._v(" "),_c('v-list',_vm._l((_vm.items),function(item,i){return _c('div',{key:i},[(item.state)?_c('v-list-item',{attrs:{"to":item.to,"router":"","exact":"","active-class":"active_list"}},[_c('v-list-item-action',[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1),_vm._v(" "),_c('v-list-item-content',[_c('v-list-item-title',{domProps:{"textContent":_vm._s(item.title)}})],1)],1):_vm._e()],1)}),0)],1),_vm._v(" "),_c('v-app-bar',{attrs:{"fixed":"","app":""}},[_c('v-app-bar-nav-icon',{staticStyle:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.drawer = !_vm.drawer}}}),_vm._v(" "),_c('v-toolbar-title',{staticStyle:{"font-weight":"bold"},domProps:{"textContent":_vm._s(_vm.title)}}),_vm._v(" "),_c('v-spacer'),_vm._v(" "),(_vm.loggedInUser)?_c('div',{staticClass:"user-name"},[_c('h4',{staticStyle:{"color":"white"}},[_vm._v(_vm._s(_vm.loggedInUser.username))])]):_vm._e(),_vm._v(" "),_c('v-btn',{attrs:{"icon":""},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[(_vm.loggedInUser)?_c('v-icon',{attrs:{"color":"success"}},[_vm._v("mdi-logout")]):_vm._e()],1)],1),_vm._v(" "),_c('v-main',[_c('v-container',[_c('nuxt')],1)],1),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('div',{staticClass:"layer",attrs:{"id":"layer"}}):_vm._e()]),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('v-card',{staticClass:"logout elevation-12"},[_c('v-card-title',[_vm._v("\n        Logout\n      ")]),_vm._v(" "),_c('hr',{staticClass:"hr"}),_vm._v(" "),_c('v-card-subtitle',[_vm._v("\n        Are you sure?\n      ")]),_vm._v(" "),_c('div',{staticClass:"btn-div"},[_c('v-btn',{staticClass:"success logout-btn",on:{"click":_vm.logout}},[_vm._v("Yes")]),_vm._v(" "),_c('v-btn',{staticClass:"error logout-btn",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)],1):_vm._e()],1),_vm._v(" "),_c('v-footer',{attrs:{"absolute":!_vm.fixed,"app":""}},[_c('span',[_vm._v("© "+_vm._s(new Date().getFullYear()))])])],1)}
-var statusvue_type_template_id_14f084ab_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/status.vue?vue&type=template&id=389489f7&
+var statusvue_type_template_id_389489f7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-navigation-drawer',{staticClass:"sidebar",attrs:{"fixed":"","app":"","temporary":""},model:{value:(_vm.drawer),callback:function ($$v) {_vm.drawer=$$v},expression:"drawer"}},[_c('div',{staticClass:"brand"},[_c('img',{staticClass:"brand-logo",attrs:{"src":"nex-plex-h.png","alt":"nex-plex-logo"}})]),_vm._v(" "),_c('hr',{staticClass:"horizontal-line"}),_vm._v(" "),_c('v-list',_vm._l((_vm.items),function(item,i){return _c('div',{key:i},[(item.state)?_c('v-list-item',{attrs:{"to":item.to,"router":"","exact":"","active-class":"active_list"}},[_c('v-list-item-action',[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1),_vm._v(" "),_c('v-list-item-content',[_c('v-list-item-title',{domProps:{"textContent":_vm._s(item.title)}})],1)],1):_vm._e()],1)}),0)],1),_vm._v(" "),_c('v-app-bar',{attrs:{"fixed":"","app":""}},[_c('v-app-bar-nav-icon',{staticStyle:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.drawer = !_vm.drawer}}}),_vm._v(" "),_c('v-toolbar-title',{staticStyle:{"font-weight":"bold"},domProps:{"textContent":_vm._s(_vm.title)}}),_vm._v(" "),_c('v-spacer'),_vm._v(" "),(_vm.loggedInUser)?_c('div',{staticClass:"user-name"},[_c('h4',{staticStyle:{"color":"white"}},[_vm._v(_vm._s(_vm.loggedInUser.username))])]):_vm._e(),_vm._v(" "),_c('v-btn',{attrs:{"icon":""},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[(_vm.loggedInUser)?_c('v-icon',{attrs:{"color":"success"}},[_vm._v("mdi-logout")]):_vm._e()],1)],1),_vm._v(" "),_c('v-main',[_c('v-container',[_c('nuxt')],1)],1),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('div',{staticClass:"layer",attrs:{"id":"layer"}}):_vm._e()]),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('v-card',{staticClass:"logout elevation-12"},[_c('v-card-title',[_vm._v("\n        Logout\n      ")]),_vm._v(" "),_c('hr',{staticClass:"hr"}),_vm._v(" "),_c('v-card-subtitle',[_vm._v("\n        Are you sure?\n      ")]),_vm._v(" "),_c('div',{staticClass:"btn-div"},[_c('v-btn',{staticClass:"success logout-btn",on:{"click":_vm.logout}},[_vm._v("Yes")]),_vm._v(" "),_c('v-btn',{staticClass:"error logout-btn",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)],1):_vm._e()],1),_vm._v(" "),_c('v-footer',{attrs:{"absolute":!_vm.fixed,"app":""}},[_c('span',[_vm._v("© "+_vm._s(new Date().getFullYear()))])])],1)}
+var statusvue_type_template_id_389489f7_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/status.vue?vue&type=template&id=14f084ab&
+// CONCATENATED MODULE: ./layouts/status.vue?vue&type=template&id=389489f7&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/status.vue?vue&type=script&lang=js&
 //
@@ -15291,26 +15286,22 @@ var statusvue_type_template_id_14f084ab_staticRenderFns = []
   watch: {
     updatedDate: function () {
       if (this.updatedDate == true) {
-        console.log("here");
-        this.client.publish("debug/test/database/ipah1", "updated");
+        console.log("here"); // this.client.publish("debug/test/database/ipah1", "updated");
       }
     },
     updatedDate2: function () {
       if (this.updatedDate2 == true) {
-        console.log("here2");
-        this.client.publish("debug/test/database/ipah2", "updated");
+        console.log("here2"); // this.client.publish("debug/test/database/ipah2", "updated");
       }
     },
     updatedDate3: function () {
       if (this.updatedDate3 == true) {
-        console.log("here2");
-        this.client.publish("debug/test/database/tkpmPagoh", "updated");
+        console.log("here2"); // this.client.publish("debug/test/database/tkpmPagoh", "updated");
       }
     },
     updatedDate4: function () {
       if (this.updatedDate4 == true) {
-        console.log("here2");
-        this.client.publish("debug/test/database/kongPo", "updated");
+        console.log("here2"); // this.client.publish("debug/test/database/kongPo", "updated");
       }
     }
   }
@@ -15365,8 +15356,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var status_component = Object(componentNormalizer["a" /* default */])(
   layouts_statusvue_type_script_lang_js_,
-  statusvue_type_template_id_14f084ab_render,
-  statusvue_type_template_id_14f084ab_staticRenderFns,
+  statusvue_type_template_id_389489f7_render,
+  statusvue_type_template_id_389489f7_staticRenderFns,
   false,
   status_injectStyles,
   null,
@@ -15675,10 +15666,6 @@ const components = {
   ControlPumpStatus: () => __webpack_require__.e(/* import() | components/control-pump-status */ 11).then(__webpack_require__.bind(null, 379)).then(c => wrapFunctional(c.default || c)),
   GeneralUserInfo: () => __webpack_require__.e(/* import() | components/general-user-info */ 13).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
   LoginForm: () => __webpack_require__.e(/* import() | components/login-form */ 14).then(__webpack_require__.bind(null, 362)).then(c => wrapFunctional(c.default || c)),
-  RegisterForm2: () => __webpack_require__.e(/* import() | components/register-form2 */ 32).then(__webpack_require__.bind(null, 389)).then(c => wrapFunctional(c.default || c)),
-  ScheduleCalendar: () => __webpack_require__.e(/* import() | components/schedule-calendar */ 33).then(__webpack_require__.bind(null, 263)).then(c => wrapFunctional(c.default || c)),
-  ScheduleTableSchedule: () => __webpack_require__.e(/* import() | components/schedule-table-schedule */ 34).then(__webpack_require__.bind(null, 283)).then(c => wrapFunctional(c.default || c)),
-  ScheduleTime: () => __webpack_require__.e(/* import() | components/schedule-time */ 35).then(__webpack_require__.bind(null, 264)).then(c => wrapFunctional(c.default || c)),
   OverviewCardDataLeaf: () => __webpack_require__.e(/* import() | components/overview-card-data-leaf */ 17).then(__webpack_require__.bind(null, 318)).then(c => wrapFunctional(c.default || c)),
   OverviewCardDataSoil: () => __webpack_require__.e(/* import() | components/overview-card-data-soil */ 18).then(__webpack_require__.bind(null, 317)).then(c => wrapFunctional(c.default || c)),
   OverviewCardDataWater: () => __webpack_require__.e(/* import() | components/overview-card-data-water */ 19).then(__webpack_require__.bind(null, 319)).then(c => wrapFunctional(c.default || c)),
@@ -15687,6 +15674,10 @@ const components = {
   OverviewCardSummary: () => __webpack_require__.e(/* import() | components/overview-card-summary */ 22).then(__webpack_require__.bind(null, 383)).then(c => wrapFunctional(c.default || c)),
   OverviewCardWeather3: () => __webpack_require__.e(/* import() | components/overview-card-weather3 */ 23).then(__webpack_require__.bind(null, 321)).then(c => wrapFunctional(c.default || c)),
   OverviewTable: () => __webpack_require__.e(/* import() | components/overview-table */ 30).then(__webpack_require__.bind(null, 385)).then(c => wrapFunctional(c.default || c)),
+  ScheduleCalendar: () => __webpack_require__.e(/* import() | components/schedule-calendar */ 33).then(__webpack_require__.bind(null, 263)).then(c => wrapFunctional(c.default || c)),
+  ScheduleTableSchedule: () => __webpack_require__.e(/* import() | components/schedule-table-schedule */ 34).then(__webpack_require__.bind(null, 283)).then(c => wrapFunctional(c.default || c)),
+  ScheduleTime: () => __webpack_require__.e(/* import() | components/schedule-time */ 35).then(__webpack_require__.bind(null, 264)).then(c => wrapFunctional(c.default || c)),
+  RegisterForm2: () => __webpack_require__.e(/* import() | components/register-form2 */ 32).then(__webpack_require__.bind(null, 389)).then(c => wrapFunctional(c.default || c)),
   StatusIpah1Status: () => __webpack_require__.e(/* import() | components/status-ipah1-status */ 36).then(__webpack_require__.bind(null, 381)).then(c => wrapFunctional(c.default || c)),
   StatusIpah2Status: () => __webpack_require__.e(/* import() | components/status-ipah2-status */ 37).then(__webpack_require__.bind(null, 380)).then(c => wrapFunctional(c.default || c)),
   StatusKongPoStatus: () => __webpack_require__.e(/* import() | components/status-kong-po-status */ 38).then(__webpack_require__.bind(null, 382)).then(c => wrapFunctional(c.default || c)),
