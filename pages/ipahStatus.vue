@@ -10,14 +10,16 @@
           <Ipah1Status
             sv1="red"
             sv2="green"
-            classSV1="filter-green"
-            classSV2="filter-red"
-            classSV3="filter-red"
-            classSV4="filter-green"
-            classSV5="filter-red"
-            classSV6="filter-red"
-            classPump="filter-green"
-            classDosingPump="filter-red"
+            :classSV1="ipahStatus.SV1 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV2="ipahStatus.SV2 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV3="ipahStatus.SV3 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV4="ipahStatus.SV4 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV5="ipahStatus.SV5 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV6="ipahStatus.SV6 == 1 ? 'filter-green' : 'filter-red'"
+            :classPump="ipahStatus.P == 1 ? 'filter-green' : 'filter-red'"
+            :classDosingPump="
+              ipahStatus.DP == 1 ? 'filter-green' : 'filter-red'
+            "
             ph="7"
             waterLvl="30"
             EC="2"
@@ -45,11 +47,21 @@
                 <div>
                   <h4>
                     Nutrient preparation is done twice a day. It is done on
-                    7.00am and 1.00pm on a daily basis. Please click button
-                    below to start nutrient preparation manually.
+                    7.00am and 1.00pm on a daily basis. Please fill time input
+                    and click button below to start nutrient preparation
+                    manually.
                   </h4>
                 </div>
-                <div style="display:flex; justify-content:center">
+                <div style=""></div>
+                <div
+                  style="display:flex; flex-direction:column;justify-content:center; align-items:center"
+                >
+                  <v-select
+                    :items="itemsDuration"
+                    label="Duration (minute)"
+                    v-model="duration"
+                    class="short"
+                  ></v-select>
                   <v-btn class="mt-4 mb-4">Start Preparation</v-btn>
                 </div>
               </v-col>
@@ -223,6 +235,8 @@
 import PageTitle from "~/components/PageTitle";
 import Ipah1Status from "~/components/Status/Ipah1Status.vue";
 
+import { mapState } from "vuex";
+
 export default {
   middleware: ["isIpah"],
   layout: "status",
@@ -282,8 +296,15 @@ export default {
       substance: "(substance)",
       itemsSubstance: ["water", "fertilizer"],
       block: "(SPH)",
-      itemsBlock: ["SPH 1", "SPH 2", "All SPH"]
+      itemsBlock: ["SPH 1", "SPH 2", "All SPH"],
+      itemsDuration: ["10", "20", "30"],
+      duration: ""
     };
+  },
+  computed: {
+    ...mapState({
+      ipahStatus: state => state.ipahStatus
+    })
   }
 };
 </script>

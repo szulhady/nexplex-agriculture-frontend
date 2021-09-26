@@ -85,34 +85,14 @@ export default {
       right: true,
       rightDrawer: false,
       items: [
-        // {
-        //   icon: "mdi-apps",
-        //   title: "GENERAL",
-        //   state:
-        //     this.$auth.hasScope("user") &&
-        //     this.$auth.$state.user.station[0] !== null,
-        //   to: "/"
-        // },
-        // {
-        //   icon: "mdi-apps",
-        //   title: "GENERAL",
-        //   state: this.$auth.hasScope("user") && this.$auth.user.topics,
-        //   to: "/general"
-        // },
         {
           icon: "mdi-view-dashboard",
           title: "OVERVIEW",
           state:
             this.$auth.hasScope("user") &&
             this.$auth.$state.user.station[0] !== null,
-          to: "/overview"
+          to: "/"
         },
-        // {
-        //   icon: "mdi-desktop-classic",
-        //   title: "CONTROL",
-        //   state: this.$auth.hasScope("user") && this.$auth.user.topics,
-        //   to: "/control"
-        // },
         {
           icon: "mdi-desktop-classic",
           title: "CONTROL PANEL",
@@ -161,11 +141,6 @@ export default {
           state: this.$auth.hasScope("admin"),
           to: "/adminStatus"
         },
-        // {
-        //   icon: "mdi-gauge",
-        //   title: "CURRENT",
-        //   to: "/current"
-        // },
         {
           icon: "mdi-calendar",
           title: "SCHEDULE",
@@ -242,7 +217,7 @@ export default {
       },
       subscription: {
         // topic: "geyzer/#",
-        topic: "ipah/test",
+        topic: ["debug/test", "debug/nexplex/sense/tkpmIpah/controllino"],
         qos: 0
       },
       receiveNews: "",
@@ -258,6 +233,10 @@ export default {
     };
   },
   methods: {
+    ...mapMutations({
+      ipahStatus: "ipahStatus",
+      tkpmIpahStatus: "tkpmIpahStatus"
+    }),
     logout: async function() {
       await this.$auth.logout();
       // this.resetState()
@@ -291,6 +270,16 @@ export default {
         console.log("Connection failed", error);
       });
       this.client.on("message", (topic, message) => {
+        if (topic === "debug/test") {
+          console.log("here");
+          this.ipahStatus();
+        }
+        if (topic === "debug/nexplex/sense/tkpmIpah/controllino") {
+          message = JSON.parse(message);
+          // this.ipahStatus();
+          this.tkpmIpahStatus(message);
+        }
+
         if (topic === "ipah/test") {
           message = JSON.parse(message);
           // console.log(message);

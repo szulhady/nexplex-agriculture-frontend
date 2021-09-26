@@ -13,7 +13,6 @@ const _49b529c5 = () => interopDefault(import('..\\pages\\ipah2Status.vue' /* we
 const _d9170bbe = () => interopDefault(import('..\\pages\\ipahStatus.vue' /* webpackChunkName: "pages/ipahStatus" */))
 const _a03a2062 = () => interopDefault(import('..\\pages\\kongPoStatus.vue' /* webpackChunkName: "pages/kongPoStatus" */))
 const _22d29578 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
-const _2226543a = () => interopDefault(import('..\\pages\\overview.vue' /* webpackChunkName: "pages/overview" */))
 const _51e9b8fc = () => interopDefault(import('..\\pages\\overview-admin.vue' /* webpackChunkName: "pages/overview-admin" */))
 const _1630f064 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
 const _a04b80ca = () => interopDefault(import('..\\pages\\scheduleIpah1.vue' /* webpackChunkName: "pages/scheduleIpah1" */))
@@ -74,10 +73,6 @@ export const routerOptions = {
     path: "/login",
     component: _22d29578,
     name: "login"
-  }, {
-    path: "/overview",
-    component: _2226543a,
-    name: "overview"
   }, {
     path: "/overview-admin",
     component: _51e9b8fc,

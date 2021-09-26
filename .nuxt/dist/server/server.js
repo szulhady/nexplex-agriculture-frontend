@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/admin-overview-card-data-leaf-admin","2":"components/admin-overview-card-data-soil-admin","3":"components/admin-overview-card-data-water-admin","4":"components/admin-overview-card-overview-data-admin","5":"components/admin-overview-card-summary-admin","6":"components/admin-overview-ipah-status-admin","7":"components/admin-overview-ipah2-status-admin","8":"components/admin-overview-single-data","9":"components/admin-overview-tkpm-pagoh-status-admin","10":"components/card-title","11":"components/control-pump-status","12":"components/duration","13":"components/general-user-info","14":"components/login-form","15":"components/logo","16":"components/notification","17":"components/overview-card-data-leaf","18":"components/overview-card-data-soil","19":"components/overview-card-data-water","20":"components/overview-card-overview-data","21":"components/overview-card-server","22":"components/overview-card-summary","23":"components/overview-card-weather3","24":"components/overview-single-data","25":"components/overview-single-gauge","26":"components/overview-single-server","27":"components/overview-single-summary","28":"components/overview-single-weather","29":"components/overview-single-weather-main","30":"components/overview-table","31":"components/page-title","32":"components/register-form2","33":"components/schedule-calendar","34":"components/schedule-table-schedule","35":"components/schedule-time","36":"components/status-ipah1-status","37":"components/status-ipah2-status","38":"components/status-kong-po-status","39":"components/status-tkpm-pagoh-status","40":"components/trend-card-station-trend-ipah1","41":"components/trend-card-station-trend-ipah2","42":"components/trend-card-station-trend-tkpm-pagoh","43":"components/trend-line-chart","44":"components/trend-line-chart-single-data","45":"components/vuetify-logo","46":"pages/adminStatus","47":"pages/control","48":"pages/current","49":"pages/general","50":"pages/index","51":"pages/inspire","52":"pages/ipah2Status","53":"pages/ipahStatus","54":"pages/kongPoStatus","55":"pages/login","56":"pages/overview","57":"pages/overview-admin","58":"pages/register","59":"pages/scheduleIpah1","60":"pages/scheduleIpah2","61":"pages/scheduleKongPo","62":"pages/scheduleTkpmPagoh","63":"pages/tkpmPagohStatus","64":"pages/trendsIpah1","65":"pages/trendsIpah2","66":"pages/trendsTkpmPagoh","67":"pages/user"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/admin-overview-card-data-leaf-admin","2":"components/admin-overview-card-data-soil-admin","3":"components/admin-overview-card-data-water-admin","4":"components/admin-overview-card-overview-data-admin","5":"components/admin-overview-card-summary-admin","6":"components/admin-overview-ipah-status-admin","7":"components/admin-overview-ipah2-status-admin","8":"components/admin-overview-single-data","9":"components/admin-overview-tkpm-pagoh-status-admin","10":"components/card-title","11":"components/control-pump-status","12":"components/duration","13":"components/general-user-info","14":"components/login-form","15":"components/logo","16":"components/notification","17":"components/overview-card-data-leaf","18":"components/overview-card-data-soil","19":"components/overview-card-data-water","20":"components/overview-card-overview-data","21":"components/overview-card-server","22":"components/overview-card-summary","23":"components/overview-card-weather3","24":"components/overview-single-data","25":"components/overview-single-gauge","26":"components/overview-single-server","27":"components/overview-single-summary","28":"components/overview-single-weather","29":"components/overview-single-weather-main","30":"components/overview-table","31":"components/page-title","32":"components/register-form2","33":"components/schedule-calendar","34":"components/schedule-table-schedule","35":"components/schedule-time","36":"components/status-ipah1-status","37":"components/status-ipah2-status","38":"components/status-kong-po-status","39":"components/status-tkpm-pagoh-status","40":"components/trend-card-station-trend-ipah1","41":"components/trend-card-station-trend-ipah2","42":"components/trend-card-station-trend-tkpm-pagoh","43":"components/trend-line-chart","44":"components/trend-line-chart-single-data","45":"components/vuetify-logo","46":"pages/adminStatus","47":"pages/control","48":"pages/current","49":"pages/general","50":"pages/index","51":"pages/inspire","52":"pages/ipah2Status","53":"pages/ipahStatus","54":"pages/kongPoStatus","55":"pages/login","56":"pages/overview-admin","57":"pages/register","58":"pages/scheduleIpah1","59":"pages/scheduleIpah2","60":"pages/scheduleKongPo","61":"pages/scheduleTkpmPagoh","62":"pages/tkpmPagohStatus","63":"pages/trendsIpah1","64":"pages/trendsIpah2","65":"pages/trendsTkpmPagoh","66":"pages/user"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -1897,6 +1897,12 @@ module.exports = require("ufo");
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("vuex");
+
+/***/ }),
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1960,12 +1966,6 @@ module.exports = require("ufo");
   }
 
 }));
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-module.exports = require("vuex");
 
 /***/ }),
 /* 13 */
@@ -3621,7 +3621,7 @@ let all = factory().extend({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _VSheet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _VSheet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_VSheet__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
@@ -6776,7 +6776,7 @@ const VIcon = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"
 "use strict";
 /* harmony import */ var _src_components_VList_VList_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(122);
 /* harmony import */ var _src_components_VList_VList_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VList_VList_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
 // Styles
  // Components
 
@@ -7723,7 +7723,7 @@ __webpack_require__.r(__webpack_exports__);
 }) {
   if (!$auth.hasScope('admin')) {
     // console.log("this is not admin")
-    return redirect('/overview');
+    return redirect('/');
   }
 });
 
@@ -7741,7 +7741,7 @@ __webpack_require__.r(__webpack_exports__);
   console.log($auth.$state.user.station);
 
   if ($auth.$state.user.station[0] !== 'ipah1') {
-    return redirect('/overview');
+    return redirect('/');
   }
 });
 
@@ -7759,7 +7759,7 @@ __webpack_require__.r(__webpack_exports__);
   console.log($auth.$state.user.station);
 
   if ($auth.$state.user.station[0] !== 'kongPo') {
-    return redirect('/overview');
+    return redirect('/');
   }
 });
 
@@ -7777,7 +7777,7 @@ __webpack_require__.r(__webpack_exports__);
   console.log($auth.$state.user.station);
 
   if ($auth.$state.user.station[0] !== 'ipah2') {
-    return redirect('/overview');
+    return redirect('/');
   }
 });
 
@@ -7795,7 +7795,7 @@ __webpack_require__.r(__webpack_exports__);
   console.log($auth.$state.user.station);
 
   if ($auth.$state.user.station[0] !== 'tkpmPagoh') {
-    return redirect('/overview');
+    return redirect('/');
   }
 });
 
@@ -9799,7 +9799,38 @@ const state = () => ({
       avg: [],
       monthName: []
     }]
-  }]
+  }],
+  ipahStatus: {
+    SV1: 0,
+    SV2: 0,
+    SV3: 0,
+    SV4: 0,
+    SV5: 0,
+    SV6: 0,
+    P: 0,
+    DP: 0
+  },
+  tkpmIpahStatus: {
+    SV1: 1,
+    SV2: 1,
+    SV3: 1,
+    SV4: 1,
+    SV5: 1,
+    SV6: 1,
+    SV7: 1,
+    SV8: 1,
+    SV9: 1,
+    SV10: 1,
+    SV11: 1,
+    SV12: 1,
+    SV13: 1,
+    SV14: 1,
+    SV15: 1,
+    P1: 1,
+    P2: 1,
+    P3: 1,
+    DP: 1
+  }
 });
 const mutations = {
   // api for OpenWeatherMap
@@ -10285,6 +10316,124 @@ const mutations = {
     }
 
     state.summaryKongPo[2].data = warnings;
+  },
+
+  // STATUS IPAH 
+  ipahStatus(state, payload) {
+    state.ipahStatus.SV1 = 1;
+    console.log(state.ipahStatus);
+  },
+
+  // STATUS TKPM IPAH 
+  tkpmIpahStatus(state, payload) {
+    state.tkpmIpahStatus.SV1 = 0;
+    state.tkpmIpahStatus.SV2 = 0;
+    state.tkpmIpahStatus.SV3 = 0;
+    state.tkpmIpahStatus.SV4 = 0;
+    state.tkpmIpahStatus.SV5 = 0;
+    state.tkpmIpahStatus.SV6 = 0;
+    state.tkpmIpahStatus.SV7 = 0;
+    state.tkpmIpahStatus.SV8 = 0;
+    state.tkpmIpahStatus.SV9 = 0;
+    state.tkpmIpahStatus.SV10 = 0;
+    state.tkpmIpahStatus.SV11 = 0;
+    state.tkpmIpahStatus.SV12 = 0;
+    state.tkpmIpahStatus.SV13 = 0;
+    state.tkpmIpahStatus.SV14 = 0;
+    state.tkpmIpahStatus.SV15 = 0;
+    state.tkpmIpahStatus.P1 = 0;
+    state.tkpmIpahStatus.P2 = 0;
+    state.tkpmIpahStatus.P3 = 0;
+    state.tkpmIpahStatus.DP = 0;
+
+    if (payload.WDB1 == 1) {
+      state.tkpmIpahStatus.SV1 = 1;
+      state.tkpmIpahStatus.SV13 = 1;
+      state.tkpmIpahStatus.P1 = 1;
+    }
+
+    if (payload.WDB2 == 1) {
+      state.tkpmIpahStatus.SV5 = 1;
+      state.tkpmIpahStatus.SV14 = 1;
+      state.tkpmIpahStatus.P2 = 1;
+    }
+
+    if (payload.WDB3 == 1) {
+      state.tkpmIpahStatus.SV9 = 1;
+      state.tkpmIpahStatus.SV15 = 1;
+      state.tkpmIpahStatus.P3 = 1;
+    }
+
+    if (payload.NDB1 == 1) {
+      state.tkpmIpahStatus.SV2 = 1;
+      state.tkpmIpahStatus.SV13 = 1;
+      state.tkpmIpahStatus.P1 = 1;
+    }
+
+    if (payload.NDB2 == 1) {
+      state.tkpmIpahStatus.SV6 = 1;
+      state.tkpmIpahStatus.SV14 = 1;
+      state.tkpmIpahStatus.P2 = 1;
+    }
+
+    if (payload.NDB3 == 1) {
+      state.tkpmIpahStatus.SV10 = 1;
+      state.tkpmIpahStatus.SV15 = 1;
+      state.tkpmIpahStatus.P3 = 1;
+    }
+
+    if (payload.NF == 1) {
+      state.tkpmIpahStatus.SV2 = 1;
+      state.tkpmIpahStatus.SV3 = 1;
+      state.tkpmIpahStatus.SV4 = 1;
+      state.tkpmIpahStatus.P1 = 1;
+      state.tkpmIpahStatus.SV6 = 1;
+      state.tkpmIpahStatus.SV7 = 1;
+      state.tkpmIpahStatus.SV8 = 1;
+      state.tkpmIpahStatus.P2 = 1;
+      state.tkpmIpahStatus.SV10 = 1;
+      state.tkpmIpahStatus.SV11 = 1;
+      state.tkpmIpahStatus.SV12 = 1;
+      state.tkpmIpahStatus.P3 = 1;
+      state.tkpmIpahStatus.DP = 1;
+    }
+
+    if (payload.WF == 1) {
+      state.tkpmIpahStatus.SV1 = 1;
+      state.tkpmIpahStatus.SV3 = 1;
+      state.tkpmIpahStatus.SV4 = 1;
+      state.tkpmIpahStatus.P1 = 1;
+      state.tkpmIpahStatus.SV5 = 1;
+      state.tkpmIpahStatus.SV7 = 1;
+      state.tkpmIpahStatus.SV8 = 1;
+      state.tkpmIpahStatus.P2 = 1;
+      state.tkpmIpahStatus.SV9 = 1;
+      state.tkpmIpahStatus.SV11 = 1;
+      state.tkpmIpahStatus.SV12 = 1;
+      state.tkpmIpahStatus.P3 = 1;
+    }
+
+    if (payload.WDB1 == 0 && payload.WDB2 == 0 && payload.WDB3 == 0 && payload.NDB1 == 0 && payload.NDB2 == 0 && payload.NDB3 == 0 && payload.NF == 0 && payload.WF == 0) {
+      state.tkpmIpahStatus.SV1 = 0;
+      state.tkpmIpahStatus.SV2 = 0;
+      state.tkpmIpahStatus.SV3 = 0;
+      state.tkpmIpahStatus.SV4 = 0;
+      state.tkpmIpahStatus.SV5 = 0;
+      state.tkpmIpahStatus.SV6 = 0;
+      state.tkpmIpahStatus.SV7 = 0;
+      state.tkpmIpahStatus.SV8 = 0;
+      state.tkpmIpahStatus.SV9 = 0;
+      state.tkpmIpahStatus.SV10 = 0;
+      state.tkpmIpahStatus.SV11 = 0;
+      state.tkpmIpahStatus.SV12 = 0;
+      state.tkpmIpahStatus.SV13 = 0;
+      state.tkpmIpahStatus.SV14 = 0;
+      state.tkpmIpahStatus.SV15 = 0;
+      state.tkpmIpahStatus.P1 = 0;
+      state.tkpmIpahStatus.P2 = 0;
+      state.tkpmIpahStatus.P3 = 0;
+      state.tkpmIpahStatus.DP = 0;
+    }
   }
 
 };
@@ -11097,7 +11246,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(12);
+var external_vuex_ = __webpack_require__(11);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -11201,7 +11350,7 @@ const _66228c70 = () => interopDefault(__webpack_require__.e(/* import() | pages
 
 const _450a9492 = () => interopDefault(__webpack_require__.e(/* import() | pages/general */ 49).then(__webpack_require__.bind(null, 429)));
 
-const _3a63d6a9 = () => interopDefault(__webpack_require__.e(/* import() | pages/inspire */ 51).then(__webpack_require__.bind(null, 446)));
+const _3a63d6a9 = () => interopDefault(__webpack_require__.e(/* import() | pages/inspire */ 51).then(__webpack_require__.bind(null, 445)));
 
 const _49b529c5 = () => interopDefault(__webpack_require__.e(/* import() | pages/ipah2Status */ 52).then(__webpack_require__.bind(null, 430)));
 
@@ -11211,31 +11360,29 @@ const _a03a2062 = () => interopDefault(__webpack_require__.e(/* import() | pages
 
 const _22d29578 = () => interopDefault(__webpack_require__.e(/* import() | pages/login */ 55).then(__webpack_require__.bind(null, 432)));
 
-const _2226543a = () => interopDefault(__webpack_require__.e(/* import() | pages/overview */ 56).then(__webpack_require__.bind(null, 433)));
+const _51e9b8fc = () => interopDefault(__webpack_require__.e(/* import() | pages/overview-admin */ 56).then(__webpack_require__.bind(null, 433)));
 
-const _51e9b8fc = () => interopDefault(__webpack_require__.e(/* import() | pages/overview-admin */ 57).then(__webpack_require__.bind(null, 434)));
+const _1630f064 = () => interopDefault(__webpack_require__.e(/* import() | pages/register */ 57).then(__webpack_require__.bind(null, 434)));
 
-const _1630f064 = () => interopDefault(__webpack_require__.e(/* import() | pages/register */ 58).then(__webpack_require__.bind(null, 435)));
+const _a04b80ca = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleIpah1 */ 58).then(__webpack_require__.bind(null, 435)));
 
-const _a04b80ca = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleIpah1 */ 59).then(__webpack_require__.bind(null, 436)));
+const _a02f51c8 = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleIpah2 */ 59).then(__webpack_require__.bind(null, 436)));
 
-const _a02f51c8 = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleIpah2 */ 60).then(__webpack_require__.bind(null, 437)));
+const _2cc29d18 = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleKongPo */ 60).then(__webpack_require__.bind(null, 437)));
 
-const _2cc29d18 = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleKongPo */ 61).then(__webpack_require__.bind(null, 438)));
+const _6454f85a = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleTkpmPagoh */ 61).then(__webpack_require__.bind(null, 438)));
 
-const _6454f85a = () => interopDefault(__webpack_require__.e(/* import() | pages/scheduleTkpmPagoh */ 62).then(__webpack_require__.bind(null, 439)));
+const _76b48dbc = () => interopDefault(__webpack_require__.e(/* import() | pages/tkpmPagohStatus */ 62).then(__webpack_require__.bind(null, 439)));
 
-const _76b48dbc = () => interopDefault(__webpack_require__.e(/* import() | pages/tkpmPagohStatus */ 63).then(__webpack_require__.bind(null, 440)));
+const _d08e4748 = () => interopDefault(__webpack_require__.e(/* import() | pages/trendsIpah1 */ 63).then(__webpack_require__.bind(null, 440)));
 
-const _d08e4748 = () => interopDefault(__webpack_require__.e(/* import() | pages/trendsIpah1 */ 64).then(__webpack_require__.bind(null, 441)));
+const _d0721846 = () => interopDefault(__webpack_require__.e(/* import() | pages/trendsIpah2 */ 64).then(__webpack_require__.bind(null, 441)));
 
-const _d0721846 = () => interopDefault(__webpack_require__.e(/* import() | pages/trendsIpah2 */ 65).then(__webpack_require__.bind(null, 442)));
+const _37a5d814 = () => interopDefault(__webpack_require__.e(/* import() | pages/trendsTkpmPagoh */ 65).then(__webpack_require__.bind(null, 442)));
 
-const _37a5d814 = () => interopDefault(__webpack_require__.e(/* import() | pages/trendsTkpmPagoh */ 66).then(__webpack_require__.bind(null, 443)));
+const _2e49960c = () => interopDefault(__webpack_require__.e(/* import() | pages/user */ 66).then(__webpack_require__.bind(null, 443)));
 
-const _2e49960c = () => interopDefault(__webpack_require__.e(/* import() | pages/user */ 67).then(__webpack_require__.bind(null, 444)));
-
-const _592af261 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 50).then(__webpack_require__.bind(null, 445)));
+const _592af261 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 50).then(__webpack_require__.bind(null, 444)));
 
 const emptyFn = () => {};
 
@@ -11282,10 +11429,6 @@ const routerOptions = {
     path: "/login",
     component: _22d29578,
     name: "login"
-  }, {
-    path: "/overview",
-    component: _2226543a,
-    name: "overview"
   }, {
     path: "/overview-admin",
     component: _51e9b8fc,
@@ -11905,12 +12048,12 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var nuxt_loading = (nuxt_loading_component.exports);
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=4e0cd5a0&
-var defaultvue_type_template_id_4e0cd5a0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-navigation-drawer',{staticClass:"sidebar",attrs:{"fixed":"","app":""},model:{value:(_vm.drawer),callback:function ($$v) {_vm.drawer=$$v},expression:"drawer"}},[_c('div',{staticClass:"brand"},[_c('img',{staticClass:"brand-logo",attrs:{"src":"nex-plex-h.png","alt":"nex-plex-logo"}})]),_vm._v(" "),_c('hr',{staticClass:"horizontal-line"}),_vm._v(" "),_c('v-list',_vm._l((_vm.items),function(item,i){return _c('div',{key:i},[(item.state)?_c('v-list-item',{attrs:{"to":item.to,"router":"","exact":"","active-class":"active_list"}},[_c('v-list-item-action',[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1),_vm._v(" "),_c('v-list-item-content',[_c('v-list-item-title',{domProps:{"textContent":_vm._s(item.title)}})],1)],1):_vm._e()],1)}),0)],1),_vm._v(" "),_c('v-app-bar',{attrs:{"fixed":"","app":""}},[_c('v-toolbar-title',{staticStyle:{"font-weight":"bold"},domProps:{"textContent":_vm._s(_vm.title)}}),_vm._v(" "),_c('v-spacer'),_vm._v(" "),(_vm.loggedInUser)?_c('div',{staticClass:"user-name"},[_c('h4',{staticStyle:{"color":"white"}},[_vm._v(_vm._s(_vm.loggedInUser.username))])]):_vm._e(),_vm._v(" "),_c('v-btn',{attrs:{"icon":""},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[(_vm.loggedInUser)?_c('v-icon',{attrs:{"color":"success"}},[_vm._v("mdi-logout")]):_vm._e()],1)],1),_vm._v(" "),_c('v-main',[_c('v-container',[_c('nuxt')],1)],1),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('div',{staticClass:"layer",attrs:{"id":"layer"}}):_vm._e()]),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('v-card',{staticClass:"logout elevation-12"},[_c('v-card-title',[_vm._v("\n        Logout\n      ")]),_vm._v(" "),_c('hr',{staticClass:"hr"}),_vm._v(" "),_c('v-card-subtitle',[_vm._v("\n        Are you sure?\n      ")]),_vm._v(" "),_c('div',{staticClass:"btn-div"},[_c('v-btn',{staticClass:"success logout-btn",on:{"click":_vm.logout}},[_vm._v("Yes")]),_vm._v(" "),_c('v-btn',{staticClass:"error logout-btn",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)],1):_vm._e()],1),_vm._v(" "),_c('v-footer',{attrs:{"absolute":!_vm.fixed,"app":""}},[_c('span',[_vm._v("© "+_vm._s(new Date().getFullYear()))])])],1)}
-var defaultvue_type_template_id_4e0cd5a0_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=147ddf7b&
+var defaultvue_type_template_id_147ddf7b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-navigation-drawer',{staticClass:"sidebar",attrs:{"fixed":"","app":""},model:{value:(_vm.drawer),callback:function ($$v) {_vm.drawer=$$v},expression:"drawer"}},[_c('div',{staticClass:"brand"},[_c('img',{staticClass:"brand-logo",attrs:{"src":"nex-plex-h.png","alt":"nex-plex-logo"}})]),_vm._v(" "),_c('hr',{staticClass:"horizontal-line"}),_vm._v(" "),_c('v-list',_vm._l((_vm.items),function(item,i){return _c('div',{key:i},[(item.state)?_c('v-list-item',{attrs:{"to":item.to,"router":"","exact":"","active-class":"active_list"}},[_c('v-list-item-action',[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1),_vm._v(" "),_c('v-list-item-content',[_c('v-list-item-title',{domProps:{"textContent":_vm._s(item.title)}})],1)],1):_vm._e()],1)}),0)],1),_vm._v(" "),_c('v-app-bar',{attrs:{"fixed":"","app":""}},[_c('v-toolbar-title',{staticStyle:{"font-weight":"bold"},domProps:{"textContent":_vm._s(_vm.title)}}),_vm._v(" "),_c('v-spacer'),_vm._v(" "),(_vm.loggedInUser)?_c('div',{staticClass:"user-name"},[_c('h4',{staticStyle:{"color":"white"}},[_vm._v(_vm._s(_vm.loggedInUser.username))])]):_vm._e(),_vm._v(" "),_c('v-btn',{attrs:{"icon":""},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[(_vm.loggedInUser)?_c('v-icon',{attrs:{"color":"success"}},[_vm._v("mdi-logout")]):_vm._e()],1)],1),_vm._v(" "),_c('v-main',[_c('v-container',[_c('nuxt')],1)],1),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('div',{staticClass:"layer",attrs:{"id":"layer"}}):_vm._e()]),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('v-card',{staticClass:"logout elevation-12"},[_c('v-card-title',[_vm._v("\n        Logout\n      ")]),_vm._v(" "),_c('hr',{staticClass:"hr"}),_vm._v(" "),_c('v-card-subtitle',[_vm._v("\n        Are you sure?\n      ")]),_vm._v(" "),_c('div',{staticClass:"btn-div"},[_c('v-btn',{staticClass:"success logout-btn",on:{"click":_vm.logout}},[_vm._v("Yes")]),_vm._v(" "),_c('v-btn',{staticClass:"error logout-btn",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)],1):_vm._e()],1),_vm._v(" "),_c('v-footer',{attrs:{"absolute":!_vm.fixed,"app":""}},[_c('span',[_vm._v("© "+_vm._s(new Date().getFullYear()))])])],1)}
+var defaultvue_type_template_id_147ddf7b_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=4e0cd5a0&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=147ddf7b&
 
 // EXTERNAL MODULE: ./src/class.js
 var src_class = __webpack_require__(2);
@@ -12002,32 +12145,12 @@ var external_mqtt_default = /*#__PURE__*/__webpack_require__.n(external_mqtt_);
       drawer: true,
       right: true,
       rightDrawer: false,
-      items: [// {
-      //   icon: "mdi-apps",
-      //   title: "GENERAL",
-      //   state:
-      //     this.$auth.hasScope("user") &&
-      //     this.$auth.$state.user.station[0] !== null,
-      //   to: "/"
-      // },
-      // {
-      //   icon: "mdi-apps",
-      //   title: "GENERAL",
-      //   state: this.$auth.hasScope("user") && this.$auth.user.topics,
-      //   to: "/general"
-      // },
-      {
+      items: [{
         icon: "mdi-view-dashboard",
         title: "OVERVIEW",
         state: this.$auth.hasScope("user") && this.$auth.$state.user.station[0] !== null,
-        to: "/overview"
-      }, // {
-      //   icon: "mdi-desktop-classic",
-      //   title: "CONTROL",
-      //   state: this.$auth.hasScope("user") && this.$auth.user.topics,
-      //   to: "/control"
-      // },
-      {
+        to: "/"
+      }, {
         icon: "mdi-desktop-classic",
         title: "CONTROL PANEL",
         state: this.$auth.hasScope("user") && this.$auth.$state.user.station[0] == "ipah1",
@@ -12160,7 +12283,8 @@ var external_mqtt_default = /*#__PURE__*/__webpack_require__.n(external_mqtt_);
       countWarningsIpah: "countWarningsIpah",
       countWarningsTkpmIpah: "countWarningsTkpmIpah",
       countWarningsTkpmPagoh: "countWarningsTkpmPagoh",
-      stringArray: "stringArray"
+      stringArray: "stringArray",
+      ipahStatus: "ipahStatus"
     }),
     logout: async function () {
       await this.$auth.logout();
@@ -12276,387 +12400,6 @@ var external_mqtt_default = /*#__PURE__*/__webpack_require__.n(external_mqtt_);
         console.log("Connection failed", error);
       });
       this.client.on("message", (topic, message) => {
-        // console.log(JSON.parse(message));
-        // if (topic === "debug/nexplex/sense") {
-        //   message = JSON.parse(message);
-        // IPAH 1
-        // if (message.SID == 311) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 0,
-        //     block: 0,
-        //     soilNitrogen: message.soilNitrogen,
-        //     soilPhosphorus: message.soilPhosphorus,
-        //     soilPotassium: message.soilPotassium,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS,
-        //     soilTEMP: message.soilTEMP
-        //   };
-        //   this.getCurrentDataIpah1(payload);
-        //   this.check(0, 0, 0, " Nitrogen", message.soilNitrogen, 20);
-        //   this.check(0, 0, 1, " Phosphorus", message.soilPhosphorus, 20);
-        //   this.check(0, 0, 2, " Potassium", message.soilPotassium, 20);
-        //   this.check(0, 0, 3, " pH", message.soilPH, 7);
-        //   this.check(0, 0, 4, " EC", message.soilEC, 10);
-        //   this.check(0, 0, 5, " MS", message.soilMS, 10);
-        //   this.check(0, 0, 6, " Temp", message.soilTEMP, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 0,
-        //     indexBlock: 0
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = [
-        //     "soilNitrogen",
-        //     "soilPhosphorus",
-        //     "soilPotassium",
-        //     "soilPH",
-        //     "soilEC",
-        //     "soilMS",
-        //     "soilTEMP"
-        //   ];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 0;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah1(data);
-        //   }
-        //   this.addDataIpah1(0);
-        //   let data = { station: 0, block: 4 };
-        //   this.countWarningsIpah(data);
-        // }
-        // if (message.SID == 321) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 0,
-        //     block: 1,
-        //     soilNitrogen: message.soilNitrogen,
-        //     soilPhosphorus: message.soilPhosphorus,
-        //     soilPotassium: message.soilPotassium,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS,
-        //     soilTEMP: message.soilTEMP
-        //   };
-        //   this.getCurrentDataIpah1(payload);
-        //   this.check(0, 1, 0, " Nitrogen", message.soilNitrogen, 10);
-        //   this.check(0, 1, 1, " Phosphorus", message.soilPhosphorus, 10);
-        //   this.check(0, 1, 2, " Potassium", message.soilPotassium, 10);
-        //   this.check(0, 1, 3, " pH", message.soilPH, 7);
-        //   this.check(0, 1, 4, " EC", message.soilEC, 10);
-        //   this.check(0, 1, 5, " MS", message.soilMS, 10);
-        //   this.check(0, 1, 6, " Temp", message.soilTEMP, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 0,
-        //     indexBlock: 1
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = [
-        //     "soilNitrogen",
-        //     "soilPhosphorus",
-        //     "soilPotassium",
-        //     "soilPH",
-        //     "soilEC",
-        //     "soilMS",
-        //     "soilTEMP"
-        //   ];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 1;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah1(data);
-        //   }
-        //   this.addDataIpah1(1);
-        //   let data = { station: 0, block: 4 };
-        //   this.countWarningsIpah(data);
-        // }
-        // if (message.SID == 331) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 0,
-        //     block: 2,
-        //     soilNitrogen: message.soilNitrogen,
-        //     soilPhosphorus: message.soilPhosphorus,
-        //     soilPotassium: message.soilPotassium,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS,
-        //     soilTEMP: message.soilTEMP
-        //   };
-        //   this.getCurrentDataIpah1(payload);
-        //   this.check(0, 2, 0, " Nitrogen", message.soilNitrogen, 10);
-        //   this.check(0, 2, 1, " Phosphorus", message.soilPhosphorus, 10);
-        //   this.check(0, 2, 2, " Potassium", message.soilPotassium, 10);
-        //   this.check(0, 2, 3, " pH", message.soilPH, 7);
-        //   this.check(0, 2, 4, " EC", message.soilEC, 10);
-        //   this.check(0, 2, 5, " MS", message.soilMS, 10);
-        //   this.check(0, 2, 6, " Temp", message.soilTEMP, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 0,
-        //     indexBlock: 2
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = [
-        //     "soilNitrogen",
-        //     "soilPhosphorus",
-        //     "soilPotassium",
-        //     "soilPH",
-        //     "soilEC",
-        //     "soilMS",
-        //     "soilTEMP"
-        //   ];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 2;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah1(data);
-        //   }
-        //   this.addDataIpah1(2);
-        //   let data = { station: 0, block: 4 };
-        //   this.countWarningsIpah(data);
-        // }
-        // if (message.SID == 341) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 0,
-        //     block: 3,
-        //     soilNitrogen: message.soilNitrogen,
-        //     soilPhosphorus: message.soilPhosphorus,
-        //     soilPotassium: message.soilPotassium,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS,
-        //     soilTEMP: message.soilTEMP
-        //   };
-        //   this.getCurrentDataIpah1(payload);
-        //   this.check(0, 3, 0, " Nitrogen", message.soilNitrogen, 10);
-        //   this.check(0, 3, 1, " Phosphorus", message.soilPhosphorus, 10);
-        //   this.check(0, 3, 2, " Potassium", message.soilPotassium, 10);
-        //   this.check(0, 3, 3, " pH", message.soilPH, 7);
-        //   this.check(0, 3, 4, " EC", message.soilEC, 10);
-        //   this.check(0, 3, 5, " MS", message.soilMS, 10);
-        //   this.check(0, 3, 6, " Temp", message.soilTEMP, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 0,
-        //     indexBlock: 3
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = [
-        //     "soilNitrogen",
-        //     "soilPhosphorus",
-        //     "soilPotassium",
-        //     "soilPH",
-        //     "soilEC",
-        //     "soilMS",
-        //     "soilTEMP"
-        //   ];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 3;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah1(data);
-        //   }
-        //   this.addDataIpah1(3);
-        //   let data = { station: 0, block: 4 };
-        //   this.countWarningsIpah(data);
-        // }
-        // IPAH 2
-        // if (message.SID == 312) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 1,
-        //     block: 0,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS
-        //   };
-        //   this.getCurrentDataIpah2(payload);
-        //   this.check(1, 0, 0, " pH", message.soilPH, 7);
-        //   this.check(1, 0, 1, " EC", message.soilEC, 10);
-        //   this.check(1, 0, 2, " SM", message.soilMS, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 1,
-        //     indexBlock: 0
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = ["soilPH", "soilEC", "soilMS"];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 0;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah2(data);
-        //   }
-        //   this.addDataIpah2(0);
-        //   let data = { station: 1, block: 3 };
-        //   this.countWarningsTkpmIpah(data);
-        // }
-        // if (message.SID == 322) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 1,
-        //     block: 1,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS
-        //   };
-        //   this.getCurrentDataIpah2(payload);
-        //   this.check(1, 1, 0, " pH", message.soilPH, 7);
-        //   this.check(1, 1, 1, " EC", message.soilEC, 10);
-        //   this.check(1, 1, 2, " SM", message.soilMS, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 1,
-        //     indexBlock: 1
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = ["soilPH", "soilEC", "soilMS"];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 1;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah2(data);
-        //   }
-        //   this.addDataIpah2(1);
-        //   let data = { station: 1, block: 3 };
-        //   this.countWarningsTkpmIpah(data);
-        // }
-        // if (message.SID == 332) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 1,
-        //     block: 2,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS
-        //   };
-        //   this.getCurrentDataIpah2(payload);
-        //   this.check(1, 2, 0, " pH", message.soilPH, 7);
-        //   this.check(1, 2, 1, " EC", message.soilEC, 10);
-        //   this.check(1, 2, 2, " SM", message.soilMS, 0.5);
-        //   const payloadStringArray = {
-        //     indexStation: 1,
-        //     indexBlock: 2
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = ["soilPH", "soilEC", "soilMS"];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 2;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayIpah2(data);
-        //   }
-        //   this.addDataIpah2(2);
-        //   let data = { station: 1, block: 3 };
-        //   this.countWarningsTkpmIpah(data);
-        // }
-        // TKPM PAGOH
-        // if (message.SID == 313) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 2,
-        //     block: 0,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS
-        //   };
-        //   this.getCurrentDataTkpmPagoh(payload);
-        //   this.check(2, 0, 0, " pH", message.soilPH, 7);
-        //   this.check(2, 0, 1, " EC", message.soilEC, 0.2);
-        //   this.check(2, 0, 2, " SM", message.soilMS, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 2,
-        //     indexBlock: 0
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = ["soilEC", "soilPH", "soilMS"];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 0;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayTkpmPagoh(data);
-        //   }
-        //   this.addDataTkpmPagoh(0);
-        //   let data = { station: 2, block: 3 };
-        //   this.countWarningsTkpmPagoh(data);
-        // }
-        // if (message.SID == 323) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 2,
-        //     block: 1,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS
-        //   };
-        //   this.getCurrentDataTkpmPagoh(payload);
-        //   this.check(2, 1, 0, " pH", message.soilPH, 7);
-        //   this.check(2, 1, 1, " EC", message.soilEC, 10);
-        //   this.check(2, 1, 2, " SM", message.soilMS, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 2,
-        //     indexBlock: 1
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = ["soilPH", "soilEC", "soilMS"];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 1;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayTkpmPagoh(data);
-        //   }
-        //   this.addDataTkpmPagoh(1);
-        //   let data = { station: 2, block: 3 };
-        //   this.countWarningsTkpmPagoh(data);
-        // }
-        // if (message.SID == 333) {
-        //   // console.log(message);
-        //   let payload = {
-        //     station: 2,
-        //     block: 2,
-        //     soilPH: message.soilPH,
-        //     soilEC: message.soilEC,
-        //     soilMS: message.soilMS
-        //   };
-        //   this.getCurrentDataTkpmPagoh(payload);
-        //   this.check(2, 2, 0, " pH", message.soilPH, 7);
-        //   this.check(2, 2, 1, " EC", message.soilEC, 10);
-        //   this.check(2, 2, 2, " SM", message.soilMS, 10);
-        //   const payloadStringArray = {
-        //     indexStation: 2,
-        //     indexBlock: 2
-        //   };
-        //   this.stringArray(payloadStringArray);
-        //   const val = ["soilPH", "soilEC", "soilMS"];
-        //   // //currentTrend
-        //   for (let j = 0; j < val.length; j++) {
-        //     let sensor = val[j];
-        //     let indexStation = 2;
-        //     let indexSensor = j;
-        //     let data = { sensor, indexStation, indexSensor };
-        //     this.getCurrentDataArrayTkpmPagoh(data);
-        //   }
-        //   this.addDataTkpmPagoh(2);
-        //   let data = { station: 2, block: 3 };
-        //   this.countWarningsTkpmPagoh(data);
-        // }
-        // }
         if (topic === "debug/nexplex/sense/ipah/block1") {
           message = JSON.parse(message);
           console.log("block 1", message, new Date());
@@ -13162,7 +12905,7 @@ var VAppBar = __webpack_require__(94);
 var VToolbar = __webpack_require__(96);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(11);
+var VSheet = __webpack_require__(12);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VImg/VImg.js + 2 modules
 var VImg = __webpack_require__(39);
@@ -14849,8 +14592,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   layouts_defaultvue_type_script_lang_js_,
-  defaultvue_type_template_id_4e0cd5a0_render,
-  defaultvue_type_template_id_4e0cd5a0_staticRenderFns,
+  defaultvue_type_template_id_147ddf7b_render,
+  defaultvue_type_template_id_147ddf7b_staticRenderFns,
   false,
   default_injectStyles,
   null,
@@ -14940,12 +14683,12 @@ var login_component = Object(componentNormalizer["a" /* default */])(
 
 installComponents_default()(login_component, {VMain: VMain_VMain})
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/status.vue?vue&type=template&id=389489f7&
-var statusvue_type_template_id_389489f7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-navigation-drawer',{staticClass:"sidebar",attrs:{"fixed":"","app":"","temporary":""},model:{value:(_vm.drawer),callback:function ($$v) {_vm.drawer=$$v},expression:"drawer"}},[_c('div',{staticClass:"brand"},[_c('img',{staticClass:"brand-logo",attrs:{"src":"nex-plex-h.png","alt":"nex-plex-logo"}})]),_vm._v(" "),_c('hr',{staticClass:"horizontal-line"}),_vm._v(" "),_c('v-list',_vm._l((_vm.items),function(item,i){return _c('div',{key:i},[(item.state)?_c('v-list-item',{attrs:{"to":item.to,"router":"","exact":"","active-class":"active_list"}},[_c('v-list-item-action',[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1),_vm._v(" "),_c('v-list-item-content',[_c('v-list-item-title',{domProps:{"textContent":_vm._s(item.title)}})],1)],1):_vm._e()],1)}),0)],1),_vm._v(" "),_c('v-app-bar',{attrs:{"fixed":"","app":""}},[_c('v-app-bar-nav-icon',{staticStyle:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.drawer = !_vm.drawer}}}),_vm._v(" "),_c('v-toolbar-title',{staticStyle:{"font-weight":"bold"},domProps:{"textContent":_vm._s(_vm.title)}}),_vm._v(" "),_c('v-spacer'),_vm._v(" "),(_vm.loggedInUser)?_c('div',{staticClass:"user-name"},[_c('h4',{staticStyle:{"color":"white"}},[_vm._v(_vm._s(_vm.loggedInUser.username))])]):_vm._e(),_vm._v(" "),_c('v-btn',{attrs:{"icon":""},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[(_vm.loggedInUser)?_c('v-icon',{attrs:{"color":"success"}},[_vm._v("mdi-logout")]):_vm._e()],1)],1),_vm._v(" "),_c('v-main',[_c('v-container',[_c('nuxt')],1)],1),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('div',{staticClass:"layer",attrs:{"id":"layer"}}):_vm._e()]),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('v-card',{staticClass:"logout elevation-12"},[_c('v-card-title',[_vm._v("\n        Logout\n      ")]),_vm._v(" "),_c('hr',{staticClass:"hr"}),_vm._v(" "),_c('v-card-subtitle',[_vm._v("\n        Are you sure?\n      ")]),_vm._v(" "),_c('div',{staticClass:"btn-div"},[_c('v-btn',{staticClass:"success logout-btn",on:{"click":_vm.logout}},[_vm._v("Yes")]),_vm._v(" "),_c('v-btn',{staticClass:"error logout-btn",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)],1):_vm._e()],1),_vm._v(" "),_c('v-footer',{attrs:{"absolute":!_vm.fixed,"app":""}},[_c('span',[_vm._v("© "+_vm._s(new Date().getFullYear()))])])],1)}
-var statusvue_type_template_id_389489f7_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/status.vue?vue&type=template&id=1db40116&
+var statusvue_type_template_id_1db40116_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-navigation-drawer',{staticClass:"sidebar",attrs:{"fixed":"","app":"","temporary":""},model:{value:(_vm.drawer),callback:function ($$v) {_vm.drawer=$$v},expression:"drawer"}},[_c('div',{staticClass:"brand"},[_c('img',{staticClass:"brand-logo",attrs:{"src":"nex-plex-h.png","alt":"nex-plex-logo"}})]),_vm._v(" "),_c('hr',{staticClass:"horizontal-line"}),_vm._v(" "),_c('v-list',_vm._l((_vm.items),function(item,i){return _c('div',{key:i},[(item.state)?_c('v-list-item',{attrs:{"to":item.to,"router":"","exact":"","active-class":"active_list"}},[_c('v-list-item-action',[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1),_vm._v(" "),_c('v-list-item-content',[_c('v-list-item-title',{domProps:{"textContent":_vm._s(item.title)}})],1)],1):_vm._e()],1)}),0)],1),_vm._v(" "),_c('v-app-bar',{attrs:{"fixed":"","app":""}},[_c('v-app-bar-nav-icon',{staticStyle:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.drawer = !_vm.drawer}}}),_vm._v(" "),_c('v-toolbar-title',{staticStyle:{"font-weight":"bold"},domProps:{"textContent":_vm._s(_vm.title)}}),_vm._v(" "),_c('v-spacer'),_vm._v(" "),(_vm.loggedInUser)?_c('div',{staticClass:"user-name"},[_c('h4',{staticStyle:{"color":"white"}},[_vm._v(_vm._s(_vm.loggedInUser.username))])]):_vm._e(),_vm._v(" "),_c('v-btn',{attrs:{"icon":""},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[(_vm.loggedInUser)?_c('v-icon',{attrs:{"color":"success"}},[_vm._v("mdi-logout")]):_vm._e()],1)],1),_vm._v(" "),_c('v-main',[_c('v-container',[_c('nuxt')],1)],1),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('div',{staticClass:"layer",attrs:{"id":"layer"}}):_vm._e()]),_vm._v(" "),_c('v-scroll-y-transition',[(_vm.rightDrawer)?_c('v-card',{staticClass:"logout elevation-12"},[_c('v-card-title',[_vm._v("\n        Logout\n      ")]),_vm._v(" "),_c('hr',{staticClass:"hr"}),_vm._v(" "),_c('v-card-subtitle',[_vm._v("\n        Are you sure?\n      ")]),_vm._v(" "),_c('div',{staticClass:"btn-div"},[_c('v-btn',{staticClass:"success logout-btn",on:{"click":_vm.logout}},[_vm._v("Yes")]),_vm._v(" "),_c('v-btn',{staticClass:"error logout-btn",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)],1):_vm._e()],1),_vm._v(" "),_c('v-footer',{attrs:{"absolute":!_vm.fixed,"app":""}},[_c('span',[_vm._v("© "+_vm._s(new Date().getFullYear()))])])],1)}
+var statusvue_type_template_id_1db40116_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/status.vue?vue&type=template&id=389489f7&
+// CONCATENATED MODULE: ./layouts/status.vue?vue&type=template&id=1db40116&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/status.vue?vue&type=script&lang=js&
 //
@@ -15033,32 +14776,12 @@ var statusvue_type_template_id_389489f7_staticRenderFns = []
       drawer: false,
       right: true,
       rightDrawer: false,
-      items: [// {
-      //   icon: "mdi-apps",
-      //   title: "GENERAL",
-      //   state:
-      //     this.$auth.hasScope("user") &&
-      //     this.$auth.$state.user.station[0] !== null,
-      //   to: "/"
-      // },
-      // {
-      //   icon: "mdi-apps",
-      //   title: "GENERAL",
-      //   state: this.$auth.hasScope("user") && this.$auth.user.topics,
-      //   to: "/general"
-      // },
-      {
+      items: [{
         icon: "mdi-view-dashboard",
         title: "OVERVIEW",
         state: this.$auth.hasScope("user") && this.$auth.$state.user.station[0] !== null,
-        to: "/overview"
-      }, // {
-      //   icon: "mdi-desktop-classic",
-      //   title: "CONTROL",
-      //   state: this.$auth.hasScope("user") && this.$auth.user.topics,
-      //   to: "/control"
-      // },
-      {
+        to: "/"
+      }, {
         icon: "mdi-desktop-classic",
         title: "CONTROL PANEL",
         state: this.$auth.hasScope("user") && this.$auth.$state.user.station[0] == "ipah1",
@@ -15092,12 +14815,7 @@ var statusvue_type_template_id_389489f7_staticRenderFns = []
         title: "STATUS",
         state: this.$auth.hasScope("admin"),
         to: "/adminStatus"
-      }, // {
-      //   icon: "mdi-gauge",
-      //   title: "CURRENT",
-      //   to: "/current"
-      // },
-      {
+      }, {
         icon: "mdi-calendar",
         title: "SCHEDULE",
         state: this.$auth.hasScope("user") && this.$auth.$state.user.station[0] == "ipah1",
@@ -15155,7 +14873,7 @@ var statusvue_type_template_id_389489f7_staticRenderFns = []
       },
       subscription: {
         // topic: "geyzer/#",
-        topic: "ipah/test",
+        topic: ["debug/test", "debug/nexplex/sense/tkpmIpah/controllino"],
         qos: 0
       },
       receiveNews: "",
@@ -15176,7 +14894,10 @@ var statusvue_type_template_id_389489f7_staticRenderFns = []
     };
   },
 
-  methods: {
+  methods: { ...Object(external_vuex_["mapMutations"])({
+      ipahStatus: "ipahStatus",
+      tkpmIpahStatus: "tkpmIpahStatus"
+    }),
     logout: async function () {
       await this.$auth.logout(); // this.resetState()
 
@@ -15219,6 +14940,17 @@ var statusvue_type_template_id_389489f7_staticRenderFns = []
         console.log("Connection failed", error);
       });
       this.client.on("message", (topic, message) => {
+        if (topic === "debug/test") {
+          console.log("here");
+          this.ipahStatus();
+        }
+
+        if (topic === "debug/nexplex/sense/tkpmIpah/controllino") {
+          message = JSON.parse(message); // this.ipahStatus();
+
+          this.tkpmIpahStatus(message);
+        }
+
         if (topic === "ipah/test") {
           message = JSON.parse(message); // console.log(message);
         }
@@ -15356,8 +15088,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var status_component = Object(componentNormalizer["a" /* default */])(
   layouts_statusvue_type_script_lang_js_,
-  statusvue_type_template_id_389489f7_render,
-  statusvue_type_template_id_389489f7_staticRenderFns,
+  statusvue_type_template_id_1db40116_render,
+  statusvue_type_template_id_1db40116_staticRenderFns,
   false,
   status_injectStyles,
   null,
@@ -15659,49 +15391,49 @@ function wrapFunctional(options) {
 const components = {
   CardTitle: () => __webpack_require__.e(/* import() | components/card-title */ 10).then(__webpack_require__.bind(null, 184)).then(c => wrapFunctional(c.default || c)),
   Duration: () => __webpack_require__.e(/* import() | components/duration */ 12).then(__webpack_require__.bind(null, 172)).then(c => wrapFunctional(c.default || c)),
-  Logo: () => __webpack_require__.e(/* import() | components/logo */ 15).then(__webpack_require__.bind(null, 447)).then(c => wrapFunctional(c.default || c)),
+  Logo: () => __webpack_require__.e(/* import() | components/logo */ 15).then(__webpack_require__.bind(null, 446)).then(c => wrapFunctional(c.default || c)),
   Notification: () => __webpack_require__.e(/* import() | components/notification */ 16).then(__webpack_require__.bind(null, 230)).then(c => wrapFunctional(c.default || c)),
   PageTitle: () => __webpack_require__.e(/* import() | components/page-title */ 31).then(__webpack_require__.bind(null, 171)).then(c => wrapFunctional(c.default || c)),
-  VuetifyLogo: () => __webpack_require__.e(/* import() | components/vuetify-logo */ 45).then(__webpack_require__.bind(null, 448)).then(c => wrapFunctional(c.default || c)),
-  ControlPumpStatus: () => __webpack_require__.e(/* import() | components/control-pump-status */ 11).then(__webpack_require__.bind(null, 379)).then(c => wrapFunctional(c.default || c)),
-  GeneralUserInfo: () => __webpack_require__.e(/* import() | components/general-user-info */ 13).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
-  LoginForm: () => __webpack_require__.e(/* import() | components/login-form */ 14).then(__webpack_require__.bind(null, 362)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardDataLeaf: () => __webpack_require__.e(/* import() | components/overview-card-data-leaf */ 17).then(__webpack_require__.bind(null, 318)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardDataSoil: () => __webpack_require__.e(/* import() | components/overview-card-data-soil */ 18).then(__webpack_require__.bind(null, 317)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardDataWater: () => __webpack_require__.e(/* import() | components/overview-card-data-water */ 19).then(__webpack_require__.bind(null, 319)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardOverviewData: () => __webpack_require__.e(/* import() | components/overview-card-overview-data */ 20).then(__webpack_require__.bind(null, 384)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardServer: () => __webpack_require__.e(/* import() | components/overview-card-server */ 21).then(__webpack_require__.bind(null, 386)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardSummary: () => __webpack_require__.e(/* import() | components/overview-card-summary */ 22).then(__webpack_require__.bind(null, 383)).then(c => wrapFunctional(c.default || c)),
-  OverviewCardWeather3: () => __webpack_require__.e(/* import() | components/overview-card-weather3 */ 23).then(__webpack_require__.bind(null, 321)).then(c => wrapFunctional(c.default || c)),
-  OverviewTable: () => __webpack_require__.e(/* import() | components/overview-table */ 30).then(__webpack_require__.bind(null, 385)).then(c => wrapFunctional(c.default || c)),
+  VuetifyLogo: () => __webpack_require__.e(/* import() | components/vuetify-logo */ 45).then(__webpack_require__.bind(null, 447)).then(c => wrapFunctional(c.default || c)),
+  ControlPumpStatus: () => __webpack_require__.e(/* import() | components/control-pump-status */ 11).then(__webpack_require__.bind(null, 378)).then(c => wrapFunctional(c.default || c)),
+  GeneralUserInfo: () => __webpack_require__.e(/* import() | components/general-user-info */ 13).then(__webpack_require__.bind(null, 379)).then(c => wrapFunctional(c.default || c)),
+  LoginForm: () => __webpack_require__.e(/* import() | components/login-form */ 14).then(__webpack_require__.bind(null, 361)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardDataLeaf: () => __webpack_require__.e(/* import() | components/overview-card-data-leaf */ 17).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardDataSoil: () => __webpack_require__.e(/* import() | components/overview-card-data-soil */ 18).then(__webpack_require__.bind(null, 315)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardDataWater: () => __webpack_require__.e(/* import() | components/overview-card-data-water */ 19).then(__webpack_require__.bind(null, 317)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardOverviewData: () => __webpack_require__.e(/* import() | components/overview-card-overview-data */ 20).then(__webpack_require__.bind(null, 391)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardServer: () => __webpack_require__.e(/* import() | components/overview-card-server */ 21).then(__webpack_require__.bind(null, 393)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardSummary: () => __webpack_require__.e(/* import() | components/overview-card-summary */ 22).then(__webpack_require__.bind(null, 390)).then(c => wrapFunctional(c.default || c)),
+  OverviewCardWeather3: () => __webpack_require__.e(/* import() | components/overview-card-weather3 */ 23).then(__webpack_require__.bind(null, 314)).then(c => wrapFunctional(c.default || c)),
+  OverviewTable: () => __webpack_require__.e(/* import() | components/overview-table */ 30).then(__webpack_require__.bind(null, 392)).then(c => wrapFunctional(c.default || c)),
+  RegisterForm2: () => __webpack_require__.e(/* import() | components/register-form2 */ 32).then(__webpack_require__.bind(null, 385)).then(c => wrapFunctional(c.default || c)),
   ScheduleCalendar: () => __webpack_require__.e(/* import() | components/schedule-calendar */ 33).then(__webpack_require__.bind(null, 263)).then(c => wrapFunctional(c.default || c)),
   ScheduleTableSchedule: () => __webpack_require__.e(/* import() | components/schedule-table-schedule */ 34).then(__webpack_require__.bind(null, 283)).then(c => wrapFunctional(c.default || c)),
   ScheduleTime: () => __webpack_require__.e(/* import() | components/schedule-time */ 35).then(__webpack_require__.bind(null, 264)).then(c => wrapFunctional(c.default || c)),
-  RegisterForm2: () => __webpack_require__.e(/* import() | components/register-form2 */ 32).then(__webpack_require__.bind(null, 389)).then(c => wrapFunctional(c.default || c)),
   StatusIpah1Status: () => __webpack_require__.e(/* import() | components/status-ipah1-status */ 36).then(__webpack_require__.bind(null, 381)).then(c => wrapFunctional(c.default || c)),
   StatusIpah2Status: () => __webpack_require__.e(/* import() | components/status-ipah2-status */ 37).then(__webpack_require__.bind(null, 380)).then(c => wrapFunctional(c.default || c)),
   StatusKongPoStatus: () => __webpack_require__.e(/* import() | components/status-kong-po-status */ 38).then(__webpack_require__.bind(null, 382)).then(c => wrapFunctional(c.default || c)),
-  StatusTkpmPagohStatus: () => __webpack_require__.e(/* import() | components/status-tkpm-pagoh-status */ 39).then(__webpack_require__.bind(null, 390)).then(c => wrapFunctional(c.default || c)),
-  TrendCardStationTrendIpah1: () => __webpack_require__.e(/* import() | components/trend-card-station-trend-ipah1 */ 40).then(__webpack_require__.bind(null, 391)).then(c => wrapFunctional(c.default || c)),
-  TrendCardStationTrendIpah2: () => __webpack_require__.e(/* import() | components/trend-card-station-trend-ipah2 */ 41).then(__webpack_require__.bind(null, 392)).then(c => wrapFunctional(c.default || c)),
-  TrendCardStationTrendTkpmPagoh: () => __webpack_require__.e(/* import() | components/trend-card-station-trend-tkpm-pagoh */ 42).then(__webpack_require__.bind(null, 393)).then(c => wrapFunctional(c.default || c)),
+  StatusTkpmPagohStatus: () => __webpack_require__.e(/* import() | components/status-tkpm-pagoh-status */ 39).then(__webpack_require__.bind(null, 386)).then(c => wrapFunctional(c.default || c)),
+  TrendCardStationTrendIpah1: () => __webpack_require__.e(/* import() | components/trend-card-station-trend-ipah1 */ 40).then(__webpack_require__.bind(null, 387)).then(c => wrapFunctional(c.default || c)),
+  TrendCardStationTrendIpah2: () => __webpack_require__.e(/* import() | components/trend-card-station-trend-ipah2 */ 41).then(__webpack_require__.bind(null, 388)).then(c => wrapFunctional(c.default || c)),
+  TrendCardStationTrendTkpmPagoh: () => __webpack_require__.e(/* import() | components/trend-card-station-trend-tkpm-pagoh */ 42).then(__webpack_require__.bind(null, 389)).then(c => wrapFunctional(c.default || c)),
   TrendLineChart: () => __webpack_require__.e(/* import() | components/trend-line-chart */ 43).then(__webpack_require__.bind(null, 231)).then(c => wrapFunctional(c.default || c)),
   TrendLineChartSingleData: () => __webpack_require__.e(/* import() | components/trend-line-chart-single-data */ 44).then(__webpack_require__.bind(null, 232)).then(c => wrapFunctional(c.default || c)),
   AdminOverviewCardDataLeafAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-data-leaf-admin */ 1).then(__webpack_require__.bind(null, 279)).then(c => wrapFunctional(c.default || c)),
   AdminOverviewCardDataSoilAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-data-soil-admin */ 2).then(__webpack_require__.bind(null, 278)).then(c => wrapFunctional(c.default || c)),
   AdminOverviewCardDataWaterAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-data-water-admin */ 3).then(__webpack_require__.bind(null, 280)).then(c => wrapFunctional(c.default || c)),
-  AdminOverviewCardOverviewDataAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-overview-data-admin */ 4).then(__webpack_require__.bind(null, 388)).then(c => wrapFunctional(c.default || c)),
-  AdminOverviewCardSummaryAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-summary-admin */ 5).then(__webpack_require__.bind(null, 387)).then(c => wrapFunctional(c.default || c)),
-  AdminOverviewIpah2StatusAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-ipah2-status-admin */ 7).then(__webpack_require__.bind(null, 377)).then(c => wrapFunctional(c.default || c)),
-  AdminOverviewIpahStatusAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-ipah-status-admin */ 6).then(__webpack_require__.bind(null, 376)).then(c => wrapFunctional(c.default || c)),
-  AdminOverviewTkpmPagohStatusAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-tkpm-pagoh-status-admin */ 9).then(__webpack_require__.bind(null, 378)).then(c => wrapFunctional(c.default || c)),
+  AdminOverviewCardOverviewDataAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-overview-data-admin */ 4).then(__webpack_require__.bind(null, 384)).then(c => wrapFunctional(c.default || c)),
+  AdminOverviewCardSummaryAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-card-summary-admin */ 5).then(__webpack_require__.bind(null, 383)).then(c => wrapFunctional(c.default || c)),
+  AdminOverviewIpah2StatusAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-ipah2-status-admin */ 7).then(__webpack_require__.bind(null, 376)).then(c => wrapFunctional(c.default || c)),
+  AdminOverviewIpahStatusAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-ipah-status-admin */ 6).then(__webpack_require__.bind(null, 375)).then(c => wrapFunctional(c.default || c)),
+  AdminOverviewTkpmPagohStatusAdmin: () => __webpack_require__.e(/* import() | components/admin-overview-tkpm-pagoh-status-admin */ 9).then(__webpack_require__.bind(null, 377)).then(c => wrapFunctional(c.default || c)),
   OverviewSingleData: () => __webpack_require__.e(/* import() | components/overview-single-data */ 24).then(__webpack_require__.bind(null, 251)).then(c => wrapFunctional(c.default || c)),
   OverviewSingleGauge: () => __webpack_require__.e(/* import() | components/overview-single-gauge */ 25).then(__webpack_require__.bind(null, 222)).then(c => wrapFunctional(c.default || c)),
-  OverviewSingleServer: () => __webpack_require__.e(/* import() | components/overview-single-server */ 26).then(__webpack_require__.bind(null, 320)).then(c => wrapFunctional(c.default || c)),
+  OverviewSingleServer: () => __webpack_require__.e(/* import() | components/overview-single-server */ 26).then(__webpack_require__.bind(null, 318)).then(c => wrapFunctional(c.default || c)),
   OverviewSingleSummary: () => __webpack_require__.e(/* import() | components/overview-single-summary */ 27).then(__webpack_require__.bind(null, 262)).then(c => wrapFunctional(c.default || c)),
   OverviewSingleWeather: () => __webpack_require__.e(/* import() | components/overview-single-weather */ 28).then(__webpack_require__.bind(null, 282)).then(c => wrapFunctional(c.default || c)),
   OverviewSingleWeatherMain: () => __webpack_require__.e(/* import() | components/overview-single-weather-main */ 29).then(__webpack_require__.bind(null, 281)).then(c => wrapFunctional(c.default || c)),
-  AdminOverviewSingleData: () => __webpack_require__.e(/* import() | components/admin-overview-single-data */ 8).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c))
+  AdminOverviewSingleData: () => __webpack_require__.e(/* import() | components/admin-overview-single-data */ 8).then(__webpack_require__.bind(null, 218)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {
@@ -17685,19 +17417,19 @@ module.exports = require("core-js/modules/esnext.map.update.js");
 /* 162 */
 /***/ (function(module, exports) {
 
-module.exports = require("vue2-timepicker");
+module.exports = require("core-js/modules/esnext.array.last-item.js");
 
 /***/ }),
 /* 163 */
 /***/ (function(module, exports) {
 
-module.exports = require("moment");
+module.exports = require("vue2-timepicker");
 
 /***/ }),
 /* 164 */
 /***/ (function(module, exports) {
 
-module.exports = require("core-js/modules/esnext.array.last-item.js");
+module.exports = require("moment");
 
 /***/ }),
 /* 165 */

@@ -10,27 +10,41 @@
           <Ipah2Status
             sv1="red"
             sv2="green"
-            classSV1="filter-green"
-            classSV2="filter-red"
-            classSV3="filter-red"
-            classSV4="filter-green"
-            classSV5="filter-red"
-            classSV6="filter-red"
-            classSV7="filter-green"
-            classSV8="filter-red"
-            classSV9="filter-red"
-            classSV10="filter-green"
-            classSV11="filter-red"
-            classSV12="filter-red"
-            classSV13="filter-green"
-            classSV14="filter-red"
-            classSV15="filter-red"
+            :classSV1="tkpmIpahStatus.SV1 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV2="tkpmIpahStatus.SV2 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV3="tkpmIpahStatus.SV3 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV4="tkpmIpahStatus.SV4 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV5="tkpmIpahStatus.SV5 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV6="tkpmIpahStatus.SV6 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV7="tkpmIpahStatus.SV7 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV8="tkpmIpahStatus.SV8 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV9="tkpmIpahStatus.SV9 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV10="
+              tkpmIpahStatus.SV10 == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classSV11="
+              tkpmIpahStatus.SV11 == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classSV12="
+              tkpmIpahStatus.SV12 == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classSV13="
+              tkpmIpahStatus.SV13 == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classSV14="
+              tkpmIpahStatus.SV14 == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classSV15="
+              tkpmIpahStatus.SV15 == 1 ? 'filter-green' : 'filter-red'
+            "
             classPump="filter-green"
-            classDosingPump="filter-red"
+            :classDosingPump="
+              tkpmIpahStatus.DP == 1 ? 'filter-green' : 'filter-red'
+            "
             classPumpNaturalWater="filter-green"
-            classPump1="filter-red"
-            classPump2="filter-red"
-            classPump3="filter-red"
+            :classPump1="tkpmIpahStatus.P1 == 1 ? 'filter-green' : 'filter-red'"
+            :classPump2="tkpmIpahStatus.P2 == 1 ? 'filter-green' : 'filter-red'"
+            :classPump3="tkpmIpahStatus.P3 == 1 ? 'filter-green' : 'filter-red'"
             ph="7"
             waterLvl="30"
             EC1="2"
@@ -55,11 +69,20 @@
                 <div>
                   <h4>
                     Nutrient preparation is done twice a day. It is done on
-                    7.00am and 1.00pm on a daily basis. Please click button
-                    below to start nutrient preparation manually.
+                    7.00am and 1.00pm on a daily basis. Please fill time input
+                    and click button below to start nutrient preparation
+                    manually.
                   </h4>
                 </div>
-                <div style="display:flex; justify-content:center">
+                <div
+                  style="display:flex; flex-direction:column;justify-content:center; align-items:center"
+                >
+                  <v-select
+                    :items="itemsDuration"
+                    label="Duration (minute)"
+                    v-model="duration"
+                    class="short"
+                  ></v-select>
                   <v-btn class="mt-4 mb-4">Start Preparation</v-btn>
                 </div>
               </v-col>
@@ -228,7 +251,7 @@ import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
-
+import { mapState } from "vuex";
 export default {
   middleware: ["isTkpmIpah"],
   layout: "status",
@@ -305,13 +328,20 @@ export default {
       substance: "(substance)",
       itemsSubstance: ["water", "fertilizer"],
       block: [],
-      itemsBlock: ["Block 1", "Block 2", "Block 3"]
+      itemsBlock: ["Block 1", "Block 2", "Block 3"],
+      itemsDuration: ["10", "20", "30"],
+      duration: ""
     };
   },
   components: {
     PageTitle,
     Ipah2Status,
     VueSlickCarousel
+  },
+  computed: {
+    ...mapState({
+      tkpmIpahStatus: state => state.tkpmIpahStatus
+    })
   }
 };
 </script>

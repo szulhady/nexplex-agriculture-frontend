@@ -1569,7 +1569,38 @@ export const state = () => ({
         },
       ]
     },
-  ]
+  ],
+  ipahStatus:{
+    SV1:0,
+    SV2:0,
+    SV3:0,
+    SV4:0,
+    SV5:0,
+    SV6:0,
+    P:0,
+    DP:0
+  },
+  tkpmIpahStatus:{
+    SV1:1,
+    SV2:1,
+    SV3:1,
+    SV4:1,
+    SV5:1,
+    SV6:1,
+    SV7:1,
+    SV8:1,
+    SV9:1,
+    SV10:1,
+    SV11:1,
+    SV12:1,
+    SV13:1,
+    SV14:1,
+    SV15:1,
+    P1:1,
+    P2:1,
+    P3:1,
+    DP:1
+  }
 });
 
 
@@ -2024,6 +2055,125 @@ export const mutations = {
       }
       state.summaryKongPo[2].data = warnings
     },
+
+    // STATUS IPAH 
+    ipahStatus(state,payload){
+      state.ipahStatus.SV1= 1
+      console.log(state.ipahStatus)
+    },
+
+    // STATUS TKPM IPAH 
+    tkpmIpahStatus(state,payload){
+      state.tkpmIpahStatus.SV1=0
+      state.tkpmIpahStatus.SV2=0
+      state.tkpmIpahStatus.SV3=0
+      state.tkpmIpahStatus.SV4=0
+      state.tkpmIpahStatus.SV5=0
+      state.tkpmIpahStatus.SV6=0
+      state.tkpmIpahStatus.SV7=0
+      state.tkpmIpahStatus.SV8=0
+      state.tkpmIpahStatus.SV9=0
+      state.tkpmIpahStatus.SV10=0
+      state.tkpmIpahStatus.SV11=0
+      state.tkpmIpahStatus.SV12=0
+      state.tkpmIpahStatus.SV13=0
+      state.tkpmIpahStatus.SV14=0
+      state.tkpmIpahStatus.SV15=0
+      state.tkpmIpahStatus.P1=0
+      state.tkpmIpahStatus.P2=0
+      state.tkpmIpahStatus.P3=0
+      state.tkpmIpahStatus.DP=0
+
+      if(payload.WDB1==1){
+        state.tkpmIpahStatus.SV1=1
+        state.tkpmIpahStatus.SV13=1
+        state.tkpmIpahStatus.P1=1
+      }
+
+      if(payload.WDB2==1){
+        
+        state.tkpmIpahStatus.SV5=1
+        state.tkpmIpahStatus.SV14=1
+        state.tkpmIpahStatus.P2=1
+      }
+ 
+      if(payload.WDB3==1){
+        state.tkpmIpahStatus.SV9=1
+        state.tkpmIpahStatus.SV15=1
+        state.tkpmIpahStatus.P3=1
+      }
+
+      if(payload.NDB1==1){
+        state.tkpmIpahStatus.SV2=1
+        state.tkpmIpahStatus.SV13=1
+        state.tkpmIpahStatus.P1=1
+      }
+
+      if(payload.NDB2==1){
+        state.tkpmIpahStatus.SV6=1
+        state.tkpmIpahStatus.SV14=1
+        state.tkpmIpahStatus.P2=1
+      }
+
+      if(payload.NDB3==1){
+        state.tkpmIpahStatus.SV10=1
+        state.tkpmIpahStatus.SV15=1
+        state.tkpmIpahStatus.P3=1
+      }
+
+      if(payload.NF==1){
+        state.tkpmIpahStatus.SV2=1
+        state.tkpmIpahStatus.SV3=1
+        state.tkpmIpahStatus.SV4=1
+        state.tkpmIpahStatus.P1=1
+        state.tkpmIpahStatus.SV6=1
+        state.tkpmIpahStatus.SV7=1
+        state.tkpmIpahStatus.SV8=1
+        state.tkpmIpahStatus.P2=1
+        state.tkpmIpahStatus.SV10=1
+        state.tkpmIpahStatus.SV11=1
+        state.tkpmIpahStatus.SV12=1
+        state.tkpmIpahStatus.P3=1
+        state.tkpmIpahStatus.DP=1
+      }
+
+      if(payload.WF==1){
+        state.tkpmIpahStatus.SV1=1
+        state.tkpmIpahStatus.SV3=1
+        state.tkpmIpahStatus.SV4=1
+        state.tkpmIpahStatus.P1=1
+        state.tkpmIpahStatus.SV5=1
+        state.tkpmIpahStatus.SV7=1
+        state.tkpmIpahStatus.SV8=1
+        state.tkpmIpahStatus.P2=1
+        state.tkpmIpahStatus.SV9=1
+        state.tkpmIpahStatus.SV11=1
+        state.tkpmIpahStatus.SV12=1
+        state.tkpmIpahStatus.P3=1
+      }
+
+      if(payload.WDB1==0 && payload.WDB2==0 && payload.WDB3==0 && payload.NDB1==0 && payload.NDB2==0 && payload.NDB3==0 && payload.NF==0 && payload.WF==0){
+        state.tkpmIpahStatus.SV1=0
+        state.tkpmIpahStatus.SV2=0
+        state.tkpmIpahStatus.SV3=0
+        state.tkpmIpahStatus.SV4=0
+        state.tkpmIpahStatus.SV5=0
+        state.tkpmIpahStatus.SV6=0
+        state.tkpmIpahStatus.SV7=0
+        state.tkpmIpahStatus.SV8=0
+        state.tkpmIpahStatus.SV9=0
+        state.tkpmIpahStatus.SV10=0
+        state.tkpmIpahStatus.SV11=0
+        state.tkpmIpahStatus.SV12=0
+        state.tkpmIpahStatus.SV13=0
+        state.tkpmIpahStatus.SV14=0
+        state.tkpmIpahStatus.SV15=0
+        state.tkpmIpahStatus.P1=0
+        state.tkpmIpahStatus.P2=0
+        state.tkpmIpahStatus.P3=0
+        state.tkpmIpahStatus.DP=0
+      }
+    }
 };
 
 export const getters = {

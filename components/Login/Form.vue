@@ -66,7 +66,7 @@ export default {
           .then(response => {
             console.log(response);
             this.setActiveUser(response.userId);
-            this.$router.push("/overview");
+            this.$router.push("/");
           });
       } catch (e) {
         console.log(e);

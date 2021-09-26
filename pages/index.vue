@@ -1,9 +1,30 @@
 <template>
   <section>
-    <PageTitle title="GENERAL" />
+    <PageTitle title="OVERVIEW" />
+    <CardSummary
+      class="mb-4"
+      :summary="
+        activeUser == 0
+          ? summaryIpah
+          : activeUser == 1
+          ? summaryTkpmIpah
+          : activeUser == 2
+          ? summaryTkpmPagoh
+          : summaryKongPo
+      "
+    />
+    <CardOverviewData class="mb-8" />
     <v-row>
-      <v-col cols="6" class="col-sm-5 col-md-5 col-lg-3">
-        <UserInfo />
+      <v-col cols="12">
+        <Table duration="Updated just now" />
+      </v-col>
+      <!-- <v-col cols="6">
+        <CardServer />
+      </v-col> -->
+    </v-row>
+    <v-row>
+      <v-col>
+        <CardWeather />
       </v-col>
     </v-row>
   </section>
@@ -11,14 +32,35 @@
 
 <script>
 import PageTitle from "~/components/PageTitle";
-import UserInfo from "~/components/General/UserInfo";
+import CardSummary from "~/components/Overview/CardSummary";
+import CardOverviewData from "~/components/Overview/CardOverviewData";
+import Table from "~/components/Overview/Table";
+import CardServer from "~/components/Overview/CardServer";
+import CardWeather from "~/components/Overview/CardWeather3";
+
+import { mapState } from "vuex";
+
 export default {
-  middleware: ["auth"],
+  middleware: ["auth", "isUser", "isTopic"],
+  layout: "default",
   components: {
     PageTitle,
-    UserInfo
+    CardSummary,
+    CardOverviewData,
+    Table,
+    CardServer,
+    CardWeather
+  },
+  computed: {
+    ...mapState({
+      activeUser: state => state.activeUser,
+      summaryIpah: state => state.summaryIpah,
+      summaryTkpmIpah: state => state.summaryTkpmIpah,
+      summaryTkpmPagoh: state => state.summaryTkpmPagoh,
+      summaryKongPo: state => state.summaryKongPo
+    })
   }
 };
 </script>
 
-<style></style>
+<style scoped></style>

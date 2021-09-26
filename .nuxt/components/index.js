@@ -17,10 +17,10 @@ export { default as OverviewCardServer } from '../..\\components\\Overview\\Card
 export { default as OverviewCardSummary } from '../..\\components\\Overview\\CardSummary.vue'
 export { default as OverviewCardWeather3 } from '../..\\components\\Overview\\CardWeather3.vue'
 export { default as OverviewTable } from '../..\\components\\Overview\\Table.vue'
+export { default as RegisterForm2 } from '../..\\components\\Register\\Form2.vue'
 export { default as ScheduleCalendar } from '../..\\components\\Schedule\\Calendar.vue'
 export { default as ScheduleTableSchedule } from '../..\\components\\Schedule\\TableSchedule.vue'
 export { default as ScheduleTime } from '../..\\components\\Schedule\\Time.vue'
-export { default as RegisterForm2 } from '../..\\components\\Register\\Form2.vue'
 export { default as StatusIpah1Status } from '../..\\components\\Status\\Ipah1Status.vue'
 export { default as StatusIpah2Status } from '../..\\components\\Status\\Ipah2Status.vue'
 export { default as StatusKongPoStatus } from '../..\\components\\Status\\KongPoStatus.vue'
@@ -63,10 +63,10 @@ export const LazyOverviewCardServer = import('../..\\components\\Overview\\CardS
 export const LazyOverviewCardSummary = import('../..\\components\\Overview\\CardSummary.vue' /* webpackChunkName: "components/overview-card-summary" */).then(c => wrapFunctional(c.default || c))
 export const LazyOverviewCardWeather3 = import('../..\\components\\Overview\\CardWeather3.vue' /* webpackChunkName: "components/overview-card-weather3" */).then(c => wrapFunctional(c.default || c))
 export const LazyOverviewTable = import('../..\\components\\Overview\\Table.vue' /* webpackChunkName: "components/overview-table" */).then(c => wrapFunctional(c.default || c))
+export const LazyRegisterForm2 = import('../..\\components\\Register\\Form2.vue' /* webpackChunkName: "components/register-form2" */).then(c => wrapFunctional(c.default || c))
 export const LazyScheduleCalendar = import('../..\\components\\Schedule\\Calendar.vue' /* webpackChunkName: "components/schedule-calendar" */).then(c => wrapFunctional(c.default || c))
 export const LazyScheduleTableSchedule = import('../..\\components\\Schedule\\TableSchedule.vue' /* webpackChunkName: "components/schedule-table-schedule" */).then(c => wrapFunctional(c.default || c))
 export const LazyScheduleTime = import('../..\\components\\Schedule\\Time.vue' /* webpackChunkName: "components/schedule-time" */).then(c => wrapFunctional(c.default || c))
-export const LazyRegisterForm2 = import('../..\\components\\Register\\Form2.vue' /* webpackChunkName: "components/register-form2" */).then(c => wrapFunctional(c.default || c))
 export const LazyStatusIpah1Status = import('../..\\components\\Status\\Ipah1Status.vue' /* webpackChunkName: "components/status-ipah1-status" */).then(c => wrapFunctional(c.default || c))
 export const LazyStatusIpah2Status = import('../..\\components\\Status\\Ipah2Status.vue' /* webpackChunkName: "components/status-ipah2-status" */).then(c => wrapFunctional(c.default || c))
 export const LazyStatusKongPoStatus = import('../..\\components\\Status\\KongPoStatus.vue' /* webpackChunkName: "components/status-kong-po-status" */).then(c => wrapFunctional(c.default || c))
