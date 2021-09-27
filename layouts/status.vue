@@ -217,7 +217,7 @@ export default {
       },
       subscription: {
         // topic: "geyzer/#",
-        topic: ["debug/test", "debug/nexplex/sense/tkpmIpah/controllino"],
+        topic: ["debug/test", "nexplex/sense/tkpmIpah/controllino"],
         qos: 0
       },
       receiveNews: "",
