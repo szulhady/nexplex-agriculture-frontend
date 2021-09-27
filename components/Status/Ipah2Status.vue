@@ -672,10 +672,10 @@ export default {
   -webkit-animation-name: blinkRed;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
-  -moz-animation: blinkRed 1s infinite;
+  /* -moz-animation: blinkRed 1s infinite;
   -ms-animation: blinkRed 1s infinite;
-  -o-animation: blinkRed 1s infinite;
-  animation: blinkRed 1s infinite;
+  -o-animation: blinkRed 1s infinite; */
+  /* animation: blinkRed 1s infinite; */
 }
 
 /* BLINK RED */
