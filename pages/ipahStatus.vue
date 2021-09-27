@@ -326,7 +326,10 @@ export default {
 .filter-green {
   filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
     brightness(90%) contrast(119%);
-  -webkit-animation: blinkGreen 1s infinite;
+  /* -webkit-animation: blinkGreen 1s infinite; */
+  -webkit-animation-name: blinkGreen;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
   -moz-animation: blinkGreen 1s infinite;
   -ms-animation: blinkGreen 1s infinite;
   -o-animation: blinkGreen 1s infinite;
@@ -336,7 +339,10 @@ export default {
 .filter-red {
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
     brightness(94%) contrast(117%);
-  -webkit-animation: blinkRed 1s infinite;
+  /* -webkit-animation: blinkRed 1s infinite; */
+  -webkit-animation-name: blinkRed;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
   -moz-animation: blinkRed 1s infinite;
   -ms-animation: blinkRed 1s infinite;
   -o-animation: blinkRed 1s infinite;
