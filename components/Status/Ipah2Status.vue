@@ -651,16 +651,18 @@ export default {
 
 <style scoped>
 .filter-green {
-  /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
+  /* -webkit-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
     brightness(90%) contrast(119%); */
   /* -webkit-animation: blinkGreen 1s infinite; */
-  -webkit-animation-name: blinkGreen;
+  /* -webkit-animation-name: blinkGreen;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
   -moz-animation: blinkGreen 1s infinite;
   -ms-animation: blinkGreen 1s infinite;
   -o-animation: blinkGreen 1s infinite;
-  animation: blinkGreen 1s infinite;
+  animation: blinkGreen 1s infinite; */
+  width: 100%;
+  height: 100%;
 }
 
 .filter-red {

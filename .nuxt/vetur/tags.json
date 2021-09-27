@@ -50,9 +50,6 @@
   "OverviewTable": {
     "description": "Auto imported from components/Overview/Table.vue"
   },
-  "RegisterForm2": {
-    "description": "Auto imported from components/Register/Form2.vue"
-  },
   "ScheduleCalendar": {
     "description": "Auto imported from components/Schedule/Calendar.vue"
   },
@@ -61,6 +58,9 @@
   },
   "ScheduleTime": {
     "description": "Auto imported from components/Schedule/Time.vue"
+  },
+  "RegisterForm2": {
+    "description": "Auto imported from components/Register/Form2.vue"
   },
   "StatusIpah1Status": {
     "description": "Auto imported from components/Status/Ipah1Status.vue"
