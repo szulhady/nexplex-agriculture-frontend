@@ -8325,18 +8325,18 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/scheduleIpah1.vue?vue&type=template&id=2003937b&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/scheduleIpah1.vue?vue&type=template&id=579a6dfa&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('PageTitle',{attrs:{"title":"SCHEDULE"}}),_vm._ssrNode(" "),_c('v-card',[_c('v-card-title',[_vm._v("\n      Set schedule for fertigation\n    ")]),_vm._v(" "),_c('v-row',[_c('v-col',{staticClass:"pl-8 col-lg-3",staticStyle:{"display":"flex","flex-direction":"column","justify-content":"center","align-items":"center"},attrs:{"cols":"12"}},[_c('div',[_c('h4',[_vm._v("Select Date")]),_vm._v(" "),_c('h5',[_vm._v("Can be a day or range of days")]),_vm._v(" "),_c('span',[_c('vc-date-picker',{attrs:{"min-date":_vm.today,"disabled-dates":_vm.disabled,"is-range":""},model:{value:(_vm.range),callback:function ($$v) {_vm.range=$$v},expression:"range"}})],1)]),_vm._v(" "),_c('div',[_c('v-btn',{staticClass:"mt-5",on:{"click":_vm.sendSchedule}},[_vm._v("\n            SET SCHEDULE\n          ")])],1)]),_vm._v(" "),_c('v-col',{staticClass:"mx-auto col-lg-9",attrs:{"cols":"12"}},[_c('v-row',[_c('v-col',{staticClass:"ml-10 ml-lg-0"},[_c('h4',[_vm._v("\n              Please fill first option first, then fill other options if\n              needed. Options for 7am and 1pm are not available due to\n              nutrient preparation process ongoing.\n            ")])])],1),_vm._v(" "),_c('v-row',[_c('v-col',{staticClass:"userInput col-md-6",attrs:{"cols":"12"}},[_c('div',[_c('label',[_vm._v("1)")]),_vm._v(" "),_c('vue-timepicker',{attrs:{"format":"HH:mm","hour-range":[
                   [0, 6],
-                  [8, 12],
+                  [8, 13],
                   [14, 23]
                 ],"hide-disabled-hours":""},model:{value:(_vm.yourStringTimeValue1),callback:function ($$v) {_vm.yourStringTimeValue1=$$v},expression:"yourStringTimeValue1"}})],1),_vm._v(" "),_c('div',{staticClass:"mx-3"},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.items1,"label":"Block"},model:{value:(_vm.block1),callback:function ($$v) {_vm.block1=$$v},expression:"block1"}})],1),_vm._v(" "),_c('div',{staticClass:"mx-3"},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.itemsDuration1,"label":"Duration"},model:{value:(_vm.duration1),callback:function ($$v) {_vm.duration1=$$v},expression:"duration1"}})],1),_vm._v(" "),_c('div',{},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.itemsSubstance,"label":"Substance"},model:{value:(_vm.substance1),callback:function ($$v) {_vm.substance1=$$v},expression:"substance1"}})],1)]),_vm._v(" "),_c('v-col',{staticClass:"userInput col-md-6",attrs:{"cols":"12"}},[_c('div',[_c('label',[_vm._v("2)")]),_vm._v(" "),_c('vue-timepicker',{attrs:{"format":"HH:mm","hour-range":[
                   [0, 6],
-                  [8, 12],
+                  [8, 13],
                   [14, 23]
                 ],"hide-disabled-hours":""},model:{value:(_vm.yourStringTimeValue2),callback:function ($$v) {_vm.yourStringTimeValue2=$$v},expression:"yourStringTimeValue2"}})],1),_vm._v(" "),_c('div',{staticClass:"mx-3"},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.items2,"label":"Block"},model:{value:(_vm.block2),callback:function ($$v) {_vm.block2=$$v},expression:"block2"}})],1),_vm._v(" "),_c('div',{staticClass:"mx-3"},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.itemsDuration2,"label":"Duration"},model:{value:(_vm.duration2),callback:function ($$v) {_vm.duration2=$$v},expression:"duration2"}})],1),_vm._v(" "),_c('div',{},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.itemsSubstance,"label":"Substance"},model:{value:(_vm.substance2),callback:function ($$v) {_vm.substance2=$$v},expression:"substance2"}})],1)]),_vm._v(" "),_c('v-col',{staticClass:"userInput col-md-6",attrs:{"cols":"12"}},[_c('div',[_c('label',[_vm._v("3)")]),_vm._v(" "),_c('vue-timepicker',{attrs:{"format":"HH:mm","hour-range":[
                   [0, 6],
-                  [8, 12],
+                  [8, 13],
                   [14, 23]
                 ],"hide-disabled-hours":""},model:{value:(_vm.yourStringTimeValue3),callback:function ($$v) {_vm.yourStringTimeValue3=$$v},expression:"yourStringTimeValue3"}})],1),_vm._v(" "),_c('div',{staticClass:"mx-3"},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.items3,"label":"Block"},model:{value:(_vm.block3),callback:function ($$v) {_vm.block3=$$v},expression:"block3"}})],1),_vm._v(" "),_c('div',{staticClass:"mx-3"},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.itemsDuration3,"label":"Duration"},model:{value:(_vm.duration3),callback:function ($$v) {_vm.duration3=$$v},expression:"duration3"}})],1),_vm._v(" "),_c('div',{},[_c('v-select',{staticClass:"short",attrs:{"items":_vm.itemsSubstance,"label":"Substance"},model:{value:(_vm.substance3),callback:function ($$v) {_vm.substance3=$$v},expression:"substance3"}})],1)]),_vm._v(" "),_c('v-col',{staticClass:"userInput col-md-6",attrs:{"cols":"12"}},[_c('div',[_c('label',[_vm._v("4)")]),_vm._v(" "),_c('vue-timepicker',{attrs:{"format":"HH:mm","hour-range":[
                   [0, 6],
@@ -8370,7 +8370,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/scheduleIpah1.vue?vue&type=template&id=2003937b&
+// CONCATENATED MODULE: ./pages/scheduleIpah1.vue?vue&type=template&id=579a6dfa&
 
 // EXTERNAL MODULE: external "vue2-timepicker"
 var external_vue2_timepicker_ = __webpack_require__(163);

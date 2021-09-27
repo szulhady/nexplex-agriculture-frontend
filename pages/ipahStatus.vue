@@ -345,7 +345,7 @@ export default {
 
 /* BLINK RED */
 @-webkit-keyframes blinkRed {
-  from {
+  0% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -355,14 +355,14 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     /* background-color: #f00; */
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
 }
 @-moz-keyframes blinkRed {
-  from {
+  0% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -372,13 +372,13 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
 }
 @-ms-keyframes blinkRed {
-  from {
+  0% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -388,13 +388,13 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
 }
 @-o-keyframes blinkRed {
-  from {
+  0% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -404,13 +404,13 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
 }
 @keyframes blinkRed {
-  from {
+  0% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -420,7 +420,7 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -428,7 +428,7 @@ export default {
 
 /* BLINK GREEN */
 @-webkit-keyframes blinkGreen {
-  from {
+  0% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
@@ -438,14 +438,14 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     /* background-color: #f00; */
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
 }
 @-moz-keyframes blinkGreen {
-  from {
+  0% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
@@ -455,13 +455,13 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
 }
 @-ms-keyframes blinkGreen {
-  from {
+  0% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
@@ -471,13 +471,13 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
 }
 @-o-keyframes blinkGreen {
-  from {
+  0% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
@@ -487,13 +487,13 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
 }
 @keyframes blinkGreen {
-  from {
+  0% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
@@ -503,7 +503,7 @@ export default {
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
-  to {
+  100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }

@@ -51,7 +51,7 @@
                   format="HH:mm"
                   :hour-range="[
                     [0, 6],
-                    [8, 12],
+                    [8, 13],
                     [14, 23]
                   ]"
                   hide-disabled-hours
@@ -91,7 +91,7 @@
                   format="HH:mm"
                   :hour-range="[
                     [0, 6],
-                    [8, 12],
+                    [8, 13],
                     [14, 23]
                   ]"
                   hide-disabled-hours
@@ -138,7 +138,7 @@
                   format="HH:mm"
                   :hour-range="[
                     [0, 6],
-                    [8, 12],
+                    [8, 13],
                     [14, 23]
                   ]"
                   hide-disabled-hours
