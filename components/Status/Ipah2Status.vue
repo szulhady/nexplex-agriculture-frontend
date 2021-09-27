@@ -684,11 +684,14 @@ export default {
     /* filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%); */
     filter: none;
+    -webkit-filter: none;
   }
   50% {
     /* filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(50%) contrast(117%); */
     filter: invert(48%) sepia(100%) saturate(7414%) hue-rotate(-1deg)
+      brightness(80%) contrast(117%);
+    -webkit-filter: invert(48%) sepia(100%) saturate(7414%) hue-rotate(-1deg)
       brightness(80%) contrast(117%);
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
@@ -698,6 +701,7 @@ export default {
     /* filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%); */
     filter: none;
+    -webkit-filter: none;
   }
 }
 @-moz-keyframes blinkRed {
@@ -763,15 +767,19 @@ export default {
     /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%); */
     filter: none;
+    -webkit-filter: none;
   }
   50% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
+      brightness(70%) contrast(119%);
+    -webkit-filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(70%) contrast(119%);
     /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
       rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   to {
     filter: none;
+    -webkit-filter: none;
     /* background-color: #f00; */
     /* filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%); */
