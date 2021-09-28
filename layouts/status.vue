@@ -276,6 +276,7 @@ export default {
         }
         if (topic === "nexplex/sense/tkpmIpah/controllino") {
           message = JSON.parse(message);
+          console.log(message);
           // this.ipahStatus();
           this.tkpmIpahStatus(message);
         }
