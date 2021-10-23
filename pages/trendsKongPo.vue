@@ -7,13 +7,13 @@
 
 <script>
 import PageTitle from "~/components/PageTitle";
-import CardStationTrend from "~/components/Trend/CardStationTrendIpah1";
+import CardStationTrend from "~/components/Trend/CardStationTrendKongPo";
 import { mapMutations, mapState } from "vuex";
 export default {
-  middleware: ["isIpah"],
+  middleware: ["isKongPo"],
   computed: {
     ...mapState({
-      items: state => state.stations[0].sensorSoil
+      items: state => state.stations[3].sensorSoil
     })
   },
   components: {
@@ -22,9 +22,9 @@ export default {
   },
   methods: {
     ...mapMutations({
-      getHourlyIpah1: "getHourlyIpah1",
-      getDailyIpah1: "getDailyIpah1",
-      getMonthlyIpah1: "getMonthlyIpah1"
+      getHourlyKongPo: "getHourlyKongPo",
+      getDailyKongPo: "getDailyKongPo",
+      getMonthlyKongPo: "getMonthlyKongPo"
     }),
     getDataHourly: function(
       table,
@@ -57,7 +57,7 @@ export default {
           });
           data = { station, indexStation, indexSensor, min, max, avg, hour };
           // console.log(data)
-          this.getHourlyIpah1(data);
+          this.getHourlyKongPo(data);
           // console.log(response);
         })
         .catch(error => {
@@ -95,7 +95,7 @@ export default {
             day.push(item.day);
           });
           data = { station, indexStation, indexSensor, min, max, avg, day };
-          this.getDailyIpah1(data);
+          this.getDailyKongPo(data);
         })
         .catch(error => {
           console.log(error);
@@ -140,7 +140,7 @@ export default {
             avg,
             monthName
           };
-          this.getMonthlyIpah1(data);
+          this.getMonthlyKongPo(data);
         })
         .catch(error => {
           console.log(error);
@@ -148,22 +148,21 @@ export default {
     }
   },
   async mounted() {
-    const station = ["311", "321", "331", "341"];
+    const station = ["314", "324"];
     const val = [
       "soilNitrogen_val",
       "soilPhosphorus_val",
       "soilPotassium_val",
       "soilPH_val",
       "soilEC_val",
-      "soilHMD_val",
-      "soilTEMP_val"
+      "soilHMD_val"
     ];
     // daily
     for (let i = 0; i < station.length; i++) {
       for (let j = 0; j < val.length; j++) {
-        this.getDataHourly("ipah_data", station[i], val[j], i, j);
-        this.getDataDaily("ipah_data", station[i], val[j], i, j);
-        this.getDataMonthly("ipah_data", station[i], val[j], i, j);
+        this.getDataHourly("kongpo_data", station[i], val[j], i, j);
+        this.getDataDaily("kongpo_data", station[i], val[j], i, j);
+        this.getDataMonthly("kongpo_data", station[i], val[j], i, j);
       }
     }
     // weekly

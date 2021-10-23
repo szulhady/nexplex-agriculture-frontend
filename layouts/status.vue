@@ -122,7 +122,7 @@ export default {
         },
         {
           icon: "mdi-desktop-classic",
-          title: "STATUS",
+          title: "CONTROL PANEL",
           state:
             this.$auth.hasScope("user") &&
             this.$auth.$state.user.station[0] == "kongPo",
@@ -203,6 +203,15 @@ export default {
             this.$auth.$state.user.station[0] == "tkpmPagoh",
           // this.$auth.user.userId == 8,
           to: "/trendsTkpmPagoh"
+        },
+        {
+          icon: "mdi-chart-areaspline",
+          title: "TRENDS",
+          state:
+            this.$auth.hasScope("user") &&
+            this.$auth.$state.user.station[0] == "kongPo",
+          // this.$auth.user.userId == 8,
+          to: "/trendsKongPo"
         }
       ],
       miniVariant: false,
@@ -217,7 +226,7 @@ export default {
       },
       subscription: {
         // topic: "geyzer/#",
-        topic: ["debug/test", "nexplex/sense/tkpmIpah/controllino"],
+        topic: ["np/#"],
         qos: 0
       },
       receiveNews: "",
@@ -235,7 +244,19 @@ export default {
   methods: {
     ...mapMutations({
       ipahStatus: "ipahStatus",
-      tkpmIpahStatus: "tkpmIpahStatus"
+      ipahStatus: "ipahStatus",
+      tkpmIpahStatus: "tkpmIpahStatus",
+      tkpmPagohStatus: "tkpmPagohStatus",
+      setActiveUser: "setActiveUser",
+      setIpah1ManualFill: "setIpah1ManualFill",
+      setIpah1ManualStop: "setIpah1ManualStop",
+      setIpah2ManualFill: "setIpah2ManualFill",
+      setIpah2ManualStop: "setIpah2ManualStop",
+      setTkpmPagohManualFill: "setTkpmPagohManualFill",
+      setTkpmPagohManualStop: "setTkpmPagohManualStop",
+      setKongPoManualFill: "setKongPoManualFill",
+      setKongPoManualStop: "setKongPoManualStop",
+      setKongPoManualNutrient: "setKongPoManualNutrient"
     }),
     logout: async function() {
       await this.$auth.logout();
@@ -274,11 +295,22 @@ export default {
           console.log("here");
           this.ipahStatus();
         }
-        if (topic === "nexplex/sense/tkpmIpah/controllino") {
+        if (topic === "np/s/ipah/c") {
           message = JSON.parse(message);
-          console.log(message);
-          // this.ipahStatus();
+          // console.log(message);
+          this.ipahStatus(message);
+        }
+
+        if (topic === "np/s/tkpmIpah/c") {
+          message = JSON.parse(message);
+          // console.log(message);
           this.tkpmIpahStatus(message);
+        }
+
+        if (topic === "np/s/tkpmPagoh/c") {
+          message = JSON.parse(message);
+          // console.log(message);
+          this.tkpmPagohStatus(message);
         }
 
         if (topic === "ipah/test") {
@@ -303,10 +335,14 @@ export default {
           console.log("Unsubscribe error", error);
         }
       });
-    },
-    ...mapMutations({
-      setActiveUser: "setActiveUser"
-    })
+    }
+    // ...mapMutations({
+    //   setActiveUser: "setActiveUser",
+    //   setIpah1ManualFill: "setIpah1ManualFill",
+    //   setIpah1ManualStop: "setIpah1ManualStop",
+    //   setIpah2ManualFill: "setIpah2ManualFill",
+    //   setIpah2ManualStop: "setIpah2ManualStop"
+    // })
   },
   computed: {
     ...mapGetters(["loggedInUser", "isAuthenticated"]),
@@ -314,7 +350,16 @@ export default {
       updatedDate: state => state.updated,
       updatedDate2: state => state.updated2,
       updatedDate3: state => state.updated3,
-      updatedDate4: state => state.updated4
+      updatedDate4: state => state.updated4,
+      ipah1ManualFill: state => state.ipah1ManualFill,
+      ipah1ManualStop: state => state.ipah1ManualStop,
+      ipah2ManualFill: state => state.ipah2ManualFill,
+      ipah2ManualStop: state => state.ipah2ManualStop,
+      tkpmPagohManualFill: state => state.tkpmPagohManualFill,
+      tkpmPagohManualStop: state => state.tkpmPagohManualStop,
+      kongPoManualFill: state => state.kongPoManualFill,
+      kongPoManualStop: state => state.kongPoManualStop,
+      kongPoManualNutrient: state => state.kongPoManualNutrient
     })
   },
   mounted: function() {
@@ -358,6 +403,72 @@ export default {
         console.log("here2");
         // this.client.publish("debug/test/database/kongPo", "updated");
       }
+    },
+    ipah1ManualFill: function() {
+      if (this.ipah1ManualFill == true) {
+        this.client.publish("debug/ipah/wf", "100");
+      }
+      this.setIpah1ManualFill(false);
+      console.log(this.ipah1ManualFill);
+    },
+    ipah1ManualStop: function() {
+      if (this.ipah1ManualStop == true) {
+        this.client.publish("debug/ipah/wf", "200");
+      }
+      this.setIpah1ManualStop(false);
+      console.log(this.ipah1ManualStop);
+    },
+    ipah2ManualFill: function() {
+      if (this.ipah2ManualFill == true) {
+        this.client.publish("debug/ipah2/wf", "100");
+      }
+      this.setIpah2ManualFill(false);
+      console.log(this.ipah2ManualFill);
+    },
+    ipah2ManualStop: function() {
+      if (this.ipah2ManualStop == true) {
+        this.client.publish("debug/ipah2/wf", "200");
+      }
+      this.setIpah2ManualStop(false);
+      console.log(this.ipah2ManualStop);
+    },
+
+    tkpmPagohManualFill: function() {
+      if (this.tkpmPagohManualFill == true) {
+        this.client.publish("debug/tkpmPagoh/wf", "100");
+      }
+      this.setTkpmPagohManualFill(false);
+      console.log(this.tkpmPagohManualFill);
+    },
+    tkpmPagohManualStop: function() {
+      if (this.tkpmPagohManualStop == true) {
+        this.client.publish("debug/tkpmPagoh/wf", "200");
+      }
+      this.setTkpmPagohManualStop(false);
+      console.log(this.tkpmPagohManualStop);
+    },
+
+    kongPoManualFill: function() {
+      if (this.kongPoManualFill == true) {
+        this.client.publish("np/c/kongpo/wf", "10");
+      }
+      this.setKongPoManualFill(false);
+      console.log(this.kongPoManualFill);
+    },
+    kongPoManualStop: function() {
+      if (this.kongPoManualStop == true) {
+        this.client.publish("np/c/kongpo/wf", "20");
+      }
+      this.setKongPoManualStop(false);
+      console.log(this.kongPoManualStop);
+    },
+    kongPoManualNutrient: function() {
+      if (this.kongPoManualNutrient == true) {
+        this.client.publish("filter/np/c/kongpo/n", `{"D1":10,"D2":1}`);
+        console.log("here");
+      }
+      this.setKongPoManualNutrient(false);
+      console.log(this.kongPoManualNutrient);
     }
   }
 };

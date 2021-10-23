@@ -20,11 +20,23 @@
   "ControlPumpStatus": {
     "description": "Auto imported from components/Control/PumpStatus.vue"
   },
-  "LoginForm": {
-    "description": "Auto imported from components/Login/Form.vue"
+  "DetailOperationInformation": {
+    "description": "Auto imported from components/detail/operationInformation.vue"
+  },
+  "DetailReport": {
+    "description": "Auto imported from components/detail/report.vue"
+  },
+  "DetailUsers": {
+    "description": "Auto imported from components/detail/users.vue"
+  },
+  "DetailYieldCropInformation": {
+    "description": "Auto imported from components/detail/yieldCropInformation.vue"
   },
   "GeneralUserInfo": {
     "description": "Auto imported from components/General/UserInfo.vue"
+  },
+  "LoginForm": {
+    "description": "Auto imported from components/Login/Form.vue"
   },
   "OverviewCardDataLeaf": {
     "description": "Auto imported from components/Overview/CardDataLeaf.vue"
@@ -59,6 +71,9 @@
   "ScheduleTableSchedule": {
     "description": "Auto imported from components/Schedule/TableSchedule.vue"
   },
+  "ScheduleTableScheduleNutrient": {
+    "description": "Auto imported from components/Schedule/TableScheduleNutrient.vue"
+  },
   "ScheduleTime": {
     "description": "Auto imported from components/Schedule/Time.vue"
   },
@@ -79,6 +94,9 @@
   },
   "TrendCardStationTrendIpah2": {
     "description": "Auto imported from components/Trend/CardStationTrendIpah2.vue"
+  },
+  "TrendCardStationTrendKongPo": {
+    "description": "Auto imported from components/Trend/CardStationTrendKongPo.vue"
   },
   "TrendCardStationTrendTkpmPagoh": {
     "description": "Auto imported from components/Trend/CardStationTrendTkpmPagoh.vue"

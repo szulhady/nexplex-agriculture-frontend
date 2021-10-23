@@ -28,13 +28,14 @@
         <v-col
           cols="12"
           class="col-md-3 pr-md-10 pt-0"
-          style="display:flex;justify-contents:center; align-items:center"
+          style="display:flex;justify-content:center; align-items:center; flex-direction:column"
         >
-          <!-- <v-card class="elevation-18 rounded-lg px-5 mb-5">
-            <v-card-title>
-              STATUS
-            </v-card-title>
-          </v-card> -->
+          <v-card class="elevation-18 rounded-lg px-5 mb-5 ">
+            <v-card-title>PROCESS</v-card-title>
+            <v-card-subtitle style="font-size:1.2em">
+              {{ ipahProcess }}
+            </v-card-subtitle>
+          </v-card>
           <v-card class="elevation-18 rounded-lg px-5 ">
             <v-card-title style="font-size:1.3rem">
               MANUAL FERTIGATION CONTROL
@@ -42,16 +43,31 @@
             <v-row>
               <v-col>
                 <v-card-title>
+                  Water Filling for fetilizer solution tank
+                </v-card-title>
+                <div>
+                  <h4>
+                    Press FILL button to start filling water manually into
+                    fetilizer solution tank. Press STOP button to stop filling
+                    process.
+                  </h4>
+                  <div style="display:flex; justify-content:space-evenly">
+                    <v-btn @click="fill" class="mt-4 mb-4">FILL</v-btn>
+                    <v-btn @click="stop" class="mt-4 mb-4">STOP</v-btn>
+                  </div>
+                </div>
+                <v-card-title>
                   Nutrient Preparation
                 </v-card-title>
                 <div>
                   <h4>
-                    Nutrient preparation is done twice a day. It is done on
-                    7.00am and 1.00pm on a daily basis. Please fill time input
-                    and click button below to start nutrient preparation
-                    manually.
+                    Nutrient preparation is done via schedule set by user on
+                    schedule panel. It is done on 11.00pm on choosen date.
+                    Please fill duration input and click button below to start
+                    nutrient preparation manually.
                   </h4>
                 </div>
+
                 <div style=""></div>
                 <div
                   style="display:flex; flex-direction:column;justify-content:center; align-items:center"
@@ -66,143 +82,9 @@
                 </div>
               </v-col>
             </v-row>
-            <!-- <v-row>
-              <v-col>
-                <v-card-title>
-                  DRIPPING
-                </v-card-title>
-                <div>
-                  <h4>
-                    Please set schedule for fertigation process in schedule
-                    panel. Use below option for manual fertigation process.
-                  </h4>
-                </div>
-                <div style="display:flex; justify-content:space-evenly">
-                  <div>
-                    <v-select
-                      v-model="substance"
-                      :items="itemsSubstance"
-                      label="Substance"
-                      class="short"
-                    ></v-select>
-                  </div>
-                  <div>
-                    <v-select
-                      v-model="block"
-                      :items="itemsBlock"
-                      label="SPH"
-                      class="short"
-                    ></v-select>
-                  </div>
-                </div>
-
-                <v-card-subtitle style="font-size:1rem">
-                  Dripping using &nbsp;
-                  <span
-                    style="border-bottom: 1px solid black; padding-bottom:3px"
-                  >
-                    {{ substance }}</span
-                  >
-                  &nbsp; on &nbsp;
-                  <span
-                    style="border-bottom: 1px solid black; padding-bottom:3px"
-                    >{{ block }}</span
-                  >
-                </v-card-subtitle>
-                <div style="display:flex; justify-content:center" class="mt-3">
-                  <v-btn>Start Dripping</v-btn>
-                </div>
-              </v-col>
-            </v-row> -->
-            <!-- <v-row>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch ">
-                <v-switch
-                  v-model="switchPump"
-                  :label="`Pump`"
-                  color="success"
-                  inset
-                  @click="trigger('pump', switchPump, 'switchPump')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchDosingPump"
-                  :label="`Dosing Pump`"
-                  color="success"
-                  inset
-                  @click="
-                    trigger('dosing pump', switchDosingPump, 'switchDosingPump')
-                  "
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV1"
-                  :label="`SV1`"
-                  color="success"
-                  inset
-                  @click="trigger('SV1', switchSV1, 'switchSV1')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV2"
-                  :label="`SV2`"
-                  color="success"
-                  inset
-                  @click="trigger('SV2', switchSV2, 'switchSV2')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV3"
-                  :label="`SV3`"
-                  color="success"
-                  inset
-                  @click="trigger('SV3', switchSV3, 'switchSV3')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV4"
-                  :label="`SV4`"
-                  color="success"
-                  inset
-                  @click="trigger('SV4', switchSV4, 'switchSV4')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV5"
-                  :label="`SV5`"
-                  color="success"
-                  inset
-                  @click="trigger('SV5', switchSV5, 'switchSV5')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV6"
-                  :label="`SV6`"
-                  color="success"
-                  inset
-                  @click="trigger('SV6', switchSV6, 'switchSV6')"
-                  readonly
-                ></v-switch>
-              </v-col>
-            </v-row> -->
           </v-card>
           <v-row>
-            <v-col class="mt-5">
-              <!-- <UserInput /> -->
-            </v-col>
+            <v-col class="mt-5"> </v-col>
           </v-row>
         </v-col>
       </v-row>
@@ -235,12 +117,16 @@
 import PageTitle from "~/components/PageTitle";
 import Ipah1Status from "~/components/Status/Ipah1Status.vue";
 
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   middleware: ["isIpah"],
   layout: "status",
   methods: {
+    ...mapMutations({
+      setIpah1ManualFill: "setIpah1ManualFill",
+      setIpah1ManualStop: "setIpah1ManualStop"
+    }),
     trigger: function(device, state, deviceName) {
       this.state2 = false;
       this.layerDrawer = true;
@@ -271,6 +157,14 @@ export default {
           this.layerDrawer = false;
         }
       };
+    },
+    fill: function() {
+      this.setIpah1ManualFill(true);
+      console.log("fill");
+    },
+    stop: function() {
+      this.setIpah1ManualStop(true);
+      console.log("stop");
     }
   },
   components: {
@@ -303,7 +197,8 @@ export default {
   },
   computed: {
     ...mapState({
-      ipahStatus: state => state.ipahStatus
+      ipahStatus: state => state.ipahStatus,
+      ipahProcess: state => state.ipahProcess
     })
   }
 };
@@ -312,21 +207,16 @@ export default {
 <style scoped>
 .overlay {
   position: relative;
-  /* display: inline-block; */
-  /* transition: transform 150ms ease-in-out; */
 }
 .overlay2 {
   position: absolute;
   top: 0;
   left: 0;
-  /* display: inline-block; */
-  /* transition: transform 150ms ease-in-out; */
 }
 
 .filter-green {
   filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
     brightness(90%) contrast(119%);
-  /* -webkit-animation: blinkGreen 1s infinite; */
   -webkit-animation-name: blinkGreen;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
@@ -339,7 +229,6 @@ export default {
 .filter-red {
   filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
     brightness(94%) contrast(117%);
-  /* -webkit-animation: blinkRed 1s infinite; */
   -webkit-animation-name: blinkRed;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
@@ -358,11 +247,8 @@ export default {
   50% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(50%) contrast(117%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
-    /* background-color: #f00; */
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(94%) contrast(117%);
   }
@@ -375,8 +261,6 @@ export default {
   50% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(50%) contrast(117%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
@@ -391,8 +275,6 @@ export default {
   50% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(50%) contrast(117%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
@@ -407,8 +289,6 @@ export default {
   50% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(50%) contrast(117%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
@@ -423,8 +303,6 @@ export default {
   50% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
       brightness(50%) contrast(117%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg)
@@ -441,11 +319,8 @@ export default {
   50% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(70%) contrast(119%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
-    /* background-color: #f00; */
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(90%) contrast(119%);
   }
@@ -458,8 +333,6 @@ export default {
   50% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(70%) contrast(119%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
@@ -474,8 +347,6 @@ export default {
   50% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(70%) contrast(119%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
@@ -490,8 +361,6 @@ export default {
   50% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(70%) contrast(119%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
@@ -506,8 +375,6 @@ export default {
   50% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
       brightness(70%) contrast(119%);
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px,
-      rgba(255, 0, 0, 0.5) 0 2px 0; */
   }
   100% {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)

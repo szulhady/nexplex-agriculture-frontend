@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _00378620 = () => interopDefault(import('..\\pages\\adminStatus.vue' /* webpackChunkName: "pages/adminStatus" */))
 const _42dbcfac = () => interopDefault(import('..\\pages\\control.vue' /* webpackChunkName: "pages/control" */))
 const _66228c70 = () => interopDefault(import('..\\pages\\current.vue' /* webpackChunkName: "pages/current" */))
+const _64866952 = () => interopDefault(import('..\\pages\\detail.vue' /* webpackChunkName: "pages/detail" */))
 const _450a9492 = () => interopDefault(import('..\\pages\\general.vue' /* webpackChunkName: "pages/general" */))
 const _3a63d6a9 = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages/inspire" */))
 const _49b529c5 = () => interopDefault(import('..\\pages\\ipah2Status.vue' /* webpackChunkName: "pages/ipah2Status" */))
@@ -22,6 +23,7 @@ const _6454f85a = () => interopDefault(import('..\\pages\\scheduleTkpmPagoh.vue'
 const _76b48dbc = () => interopDefault(import('..\\pages\\tkpmPagohStatus.vue' /* webpackChunkName: "pages/tkpmPagohStatus" */))
 const _d08e4748 = () => interopDefault(import('..\\pages\\trendsIpah1.vue' /* webpackChunkName: "pages/trendsIpah1" */))
 const _d0721846 = () => interopDefault(import('..\\pages\\trendsIpah2.vue' /* webpackChunkName: "pages/trendsIpah2" */))
+const _04d8a65a = () => interopDefault(import('..\\pages\\trendsKongPo.vue' /* webpackChunkName: "pages/trendsKongPo" */))
 const _37a5d814 = () => interopDefault(import('..\\pages\\trendsTkpmPagoh.vue' /* webpackChunkName: "pages/trendsTkpmPagoh" */))
 const _2e49960c = () => interopDefault(import('..\\pages\\user.vue' /* webpackChunkName: "pages/user" */))
 const _592af261 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
@@ -49,6 +51,10 @@ export const routerOptions = {
     path: "/current",
     component: _66228c70,
     name: "current"
+  }, {
+    path: "/detail",
+    component: _64866952,
+    name: "detail"
   }, {
     path: "/general",
     component: _450a9492,
@@ -109,6 +115,10 @@ export const routerOptions = {
     path: "/trendsIpah2",
     component: _d0721846,
     name: "trendsIpah2"
+  }, {
+    path: "/trendsKongPo",
+    component: _04d8a65a,
+    name: "trendsKongPo"
   }, {
     path: "/trendsTkpmPagoh",
     component: _37a5d814,

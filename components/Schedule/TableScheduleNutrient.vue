@@ -28,15 +28,11 @@
         </div>
       </v-card>
     </v-scroll-y-transition>
-
-    <!-- <v-scroll-y-transition>
-      <div class="layer2" v-if="box" id="layer"></div>
-    </v-scroll-y-transition> -->
-    <!-- /v-scroll-y-transition> -->
   </div>
 </template>
 
 <script>
+import Duration from "~/components/Duration";
 import { mapState, mapMutations } from "vuex";
 export default {
   data() {
@@ -85,14 +81,24 @@ export default {
     },
     deleteSchedule() {
       let api;
+      // if (this.activeUser == 0) {
+      //   api = "http://139.59.109.48/api/schedule/ipah1/nutrient";
+      // } else if (this.activeUser == 1) {
+      //   api = "http://139.59.109.48/api/schedule/ipah2/nutrient";
+      // } else if (this.activeUser == 2) {
+      //   api = "http://139.59.109.48/api/schedule/tkpmPagoh/nutrien";
+      // } else {
+      //   api = "http://139.59.109.48/api/schedule/kongPo/nutrient";
+      // }
+
       if (this.activeUser == 0) {
-        api = "http://139.59.109.48/api/schedule/ipah1";
+        api = "http://127.0.0.1:5000/api/schedule/ipah1/nutrient";
       } else if (this.activeUser == 1) {
-        api = "http://139.59.109.48/api/schedule/ipah2";
+        api = "http://127.0.0.1:5000/api/schedule/ipah2/nutrient";
       } else if (this.activeUser == 2) {
-        api = "http://139.59.109.48/api/schedule/tkpmPagoh";
+        api = "http://127.0.0.1:5000/api/schedule/tkpmPagoh/nutrien";
       } else {
-        api = "http://139.59.109.48/api/schedule/kongPo";
+        api = "http://127.0.0.1:5000/api/schedule/kongPo/nutrient";
       }
       this.$axios
         .$delete(api, {

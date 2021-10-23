@@ -10,110 +10,70 @@
           <KongPoStatus
             sv1="red"
             sv2="green"
-            classSV1="filter-green"
-            classSV2="filter-red"
-            classSV3="filter-red"
-            classSV4="filter-green"
-            classPumpNaturalWater="filter-green"
-            classPumpTappingWater="filter-green"
-            classDosingPump="filter-red"
+            :classSV1="kongPoStatus.SV1 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV2="kongPoStatus.SV2 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV3="kongPoStatus.SV3 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV4="kongPoStatus.SV4 == 1 ? 'filter-green' : 'filter-red'"
+            :classSV5="kongPoStatus.SV5 == 1 ? 'filter-green' : 'filter-red'"
+            :classPumpNaturalWater="
+              kongPoStatus.PNW == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classPumpTappingWater="
+              kongPoStatus.PTW == 1 ? 'filter-green' : 'filter-red'
+            "
+            :classDosingPump="
+              kongPoStatus.DP == 1 ? 'filter-green' : 'filter-red'
+            "
             EC="2"
           />
         </v-col>
-        <v-col cols="12" class="col-md-3 pr-md-10 pt-0">
-          <!-- <v-card class="elevation-18 rounded-lg px-5 mb-5">
-            <v-card-title>
-              STATUS
-            </v-card-title>
-          </v-card> -->
+        <v-col
+          cols="12"
+          class="col-lg-3 pr-lg-10 pt-0"
+          style="display:flex;justify-content:center; align-items:center; flex-direction:column"
+        >
+          <v-card class="elevation-18 rounded-lg px-5 mb-5 ">
+            <v-card-title>PROCESS</v-card-title>
+            <v-card-subtitle style="font-size:1.2em">
+              {{ kongPoProcess }}
+            </v-card-subtitle>
+          </v-card>
           <v-card class="elevation-18 rounded-lg px-5 ">
-            <v-card-title>
-              MANUAL CONTROL
+            <v-card-title style="font-size:1.3rem">
+              MANUAL FERTIGATION CONTROL
             </v-card-title>
             <v-row>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch ">
-                <v-switch
-                  v-model="switchPumpTappingWater"
-                  :label="`Pump Tapping Water`"
-                  color="success"
-                  inset
-                  @click="
-                    trigger(
-                      'Pump Tapping Water',
-                      switchPumpTappingWater,
-                      'switchPumpTappingWater'
-                    )
-                  "
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch ">
-                <v-switch
-                  v-model="switchPumpNaturalWater"
-                  :label="`Pump Natural Water`"
-                  color="success"
-                  inset
-                  @click="
-                    trigger(
-                      'Pump Natural Water',
-                      switchPumpNaturalWater,
-                      'switchPumpNaturalWater'
-                    )
-                  "
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchDosingPump"
-                  :label="`Dosing Pump`"
-                  color="success"
-                  inset
-                  @click="
-                    trigger('dosing pump', switchDosingPump, 'switchDosingPump')
-                  "
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV1"
-                  :label="`SV1`"
-                  color="success"
-                  inset
-                  @click="trigger('SV1', switchSV1, 'switchSV1')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV2"
-                  :label="`SV2`"
-                  color="success"
-                  inset
-                  @click="trigger('SV2', switchSV2, 'switchSV2')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV3"
-                  :label="`SV3`"
-                  color="success"
-                  inset
-                  @click="trigger('SV3', switchSV3, 'switchSV3')"
-                  readonly
-                ></v-switch>
-              </v-col>
-              <v-col cols="4" class="col-md-12 col-lg-6 switch">
-                <v-switch
-                  v-model="switchSV4"
-                  :label="`SV4`"
-                  color="success"
-                  inset
-                  @click="trigger('SV4', switchSV4, 'switchSV4')"
-                  readonly
-                ></v-switch>
+              <v-col>
+                <v-card-title>
+                  Water Filling for fetilizer solution tank
+                </v-card-title>
+                <div>
+                  <h4>
+                    Press FILL button to start filling water manually into
+                    fetilizer solution tank. Press STOP button to stop filling
+                    process.
+                  </h4>
+                  <div style="display:flex; justify-content:space-evenly">
+                    <v-btn @click="fill" class="mt-4 mb-4">FILL</v-btn>
+                    <v-btn @click="stop" class="mt-4 mb-4">STOP</v-btn>
+                  </div>
+                </div>
+                <v-card-title>
+                  Nutrient Preparation
+                </v-card-title>
+                <div>
+                  <h4>
+                    Nutrient preparation is done via schedule set by user on
+                    schedule panel. It is done on 8.00pm on choosen date. Please
+                    fill duration input and click button below to start nutrient
+                    preparation manually.
+                  </h4>
+                </div>
+                <div style="display:flex; justify-content:center">
+                  <v-btn @click="nutrient" class="mt-4 mb-4"
+                    >Start Preparation</v-btn
+                  >
+                </div>
               </v-col>
             </v-row>
           </v-card>
@@ -148,10 +108,17 @@
 import PageTitle from "~/components/PageTitle";
 import KongPoStatus from "~/components/Status/KongPoStatus.vue";
 
+import { mapState, mapMutations } from "vuex";
+
 export default {
   middleware: ["isKongPo"],
   layout: "status",
   methods: {
+    ...mapMutations({
+      setKongPoManualFill: "setKongPoManualFill",
+      setKongPoManualStop: "setKongPoManualStop",
+      setKongPoManualNutrient: "setKongPoManualNutrient"
+    }),
     trigger: function(device, state, deviceName) {
       this.state2 = false;
       this.layerDrawer = true;
@@ -182,6 +149,18 @@ export default {
           this.layerDrawer = false;
         }
       };
+    },
+    fill: function() {
+      this.setKongPoManualFill(true);
+      console.log("fill");
+    },
+    stop: function() {
+      this.setKongPoManualStop(true);
+      console.log("stop");
+    },
+    nutrient: function() {
+      this.setKongPoManualNutrient(true);
+      console.log("heree");
     }
   },
   components: {
@@ -204,6 +183,12 @@ export default {
       switchSV3: false,
       switchSV4: false
     };
+  },
+  computed: {
+    ...mapState({
+      kongPoStatus: state => state.kongPoStatus,
+      kongPoProcess: state => state.kongPoProcess
+    })
   }
 };
 </script>

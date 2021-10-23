@@ -5,8 +5,8 @@ const colors = require('vuetify/es5/util/colors').default
 module.exports = {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - ipah',
-    title: 'ipah',
+    titleTemplate: '%s Agriculture',
+    title: 'Nex-plex',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -104,12 +104,14 @@ module.exports = {
         },
         endpoints: {
           login: {
-            url: "http://139.59.109.48/api/auth/login",
+            // url: "http://139.59.109.48/api/auth/login",
+            url: "http://127.0.0.1:5000/api/auth/login",
             method: 'post',
           },
           logout: false,
           user: {
-            url: "http://139.59.109.48/api/auth/me",
+            url: "http://127.0.0.1:5000/api/auth/me",
+            // url: "http://139.59.109.48/api/auth/me",
             method: 'GET',
             // VERY IMPORTANT
             propertyName: false
