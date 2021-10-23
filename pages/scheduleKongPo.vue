@@ -1,498 +1,498 @@
 <template>
   <section>
-    <client-only>
-      <PageTitle title="SCHEDULE" />
-      <v-card class="mb-10">
-        <v-card-title>
-          Set schedule for nutrient preparation
-        </v-card-title>
-        <v-row style="display:flex; justify-content:center; align-items:center">
-          <v-col
-            cols="12"
-            class="pl-8 col-lg-3 mb-5"
-            style="display:flex;flex-direction:column;justify-content:center;align-items:center"
-          >
-            <div>
-              <h4>Select Date</h4>
-              <h5>Can be a day or range of days</h5>
-              <!-- <span> -->
-              <vc-date-picker
-                :min-date="today"
-                :disabled-dates="disabledNutrient"
-                v-model="rangeNutrient"
-                is-range
-              ></vc-date-picker>
-              <!-- </span> -->
-            </div>
-          </v-col>
-          <v-col cols="12" class="mx-auto col-lg-9">
-            <v-row>
-              <v-col class="ml-10 ml-lg-0" cols="4">
-                <v-row>
-                  <v-col>
-                    <h4>
-                      Default time for nutrient preparation process on selected
-                      date is on 12am. Please select date and duration (minute)
-                      for dosing process.
-                    </h4>
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <v-col cols="12" class="userInputNutriet">
-                    <div>
-                      <!-- <v-select
+    <!-- <client-only> -->
+    <PageTitle title="SCHEDULE" />
+    <v-card class="mb-10">
+      <v-card-title>
+        Set schedule for nutrient preparation
+      </v-card-title>
+      <v-row style="display:flex; justify-content:center; align-items:center">
+        <v-col
+          cols="12"
+          class="pl-8 col-lg-3 mb-5"
+          style="display:flex;flex-direction:column;justify-content:center;align-items:center"
+        >
+          <div>
+            <h4>Select Date</h4>
+            <h5>Can be a day or range of days</h5>
+            <!-- <span> -->
+            <vc-date-picker
+              :min-date="today"
+              :disabled-dates="disabledNutrient"
+              v-model="rangeNutrient"
+              is-range
+            ></vc-date-picker>
+            <!-- </span> -->
+          </div>
+        </v-col>
+        <v-col cols="12" class="mx-auto col-lg-9">
+          <v-row>
+            <v-col class="ml-10 ml-lg-0" cols="4">
+              <v-row>
+                <v-col>
+                  <h4>
+                    Default time for nutrient preparation process on selected
+                    date is on 12am. Please select date and duration (minute)
+                    for dosing process.
+                  </h4>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col cols="12" class="userInputNutriet">
+                  <div>
+                    <!-- <v-select
                         :items="itemsDuration1"
                         label="Duration (minute)"
                         v-model="durationNutrient"
                         class="long"
                       ></v-select> -->
-                      <v-text-field
-                        label="Duration (minute)"
-                        :rules="rules"
-                        type="number"
-                        v-model.number="durationNutrient"
-                        class="long"
-                      ></v-text-field>
-                    </div>
-                    <div>
-                      <v-btn class="mt-5" @click="sendScheduleNutrient">
-                        SET SCHEDULE
-                      </v-btn>
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-col>
-              <v-col class="ml-10 ml-lg-0 px-10" cols="8">
-                <TableScheduleNutrient
-                  :allDate="detailNutrient"
-                  description="Nutrient preparation schedule"
-                />
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-card>
-      <v-card>
-        <v-card-title>
-          Set schedule for fertigation / irrigation
-        </v-card-title>
-        <v-row>
-          <v-col
-            cols="12"
-            class="pl-8 col-lg-3"
-            style="display:flex;flex-direction:column;justify-content:center;align-items:center"
-          >
-            <div>
-              <h4>Select Date</h4>
-              <h5>Can be a day or range of days</h5>
-              <vc-date-picker
-                :min-date="today"
-                :disabled-dates="disabled"
-                v-model="range"
-                is-range
-              ></vc-date-picker>
-            </div>
-            <div>
-              <v-btn class="mt-5" @click="sendSchedule">
-                SET SCHEDULE
-              </v-btn>
-            </div>
-          </v-col>
-          <v-col cols="12" class="mx-auto col-lg-9">
-            <v-row>
-              <v-col class="ml-10 ml-lg-0">
-                <h4>
-                  Please fill first option first, then fill other options if
-                  needed. Option for 8pm is not available due to reserve slot
-                  for nutrient preparation process.
-                </h4>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>1)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue1"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                    <v-text-field
+                      label="Duration (minute)"
+                      :rules="rules"
+                      type="number"
+                      v-model.number="durationNutrient"
+                      class="long"
+                    ></v-text-field>
+                  </div>
+                  <div>
+                    <v-btn class="mt-5" @click="sendScheduleNutrient">
+                      SET SCHEDULE
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col class="ml-10 ml-lg-0 px-10" cols="8">
+              <TableScheduleNutrient
+                :allDate="detailNutrient"
+                description="Nutrient preparation schedule"
+              />
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-card>
+    <v-card>
+      <v-card-title>
+        Set schedule for fertigation / irrigation
+      </v-card-title>
+      <v-row>
+        <v-col
+          cols="12"
+          class="pl-8 col-lg-3"
+          style="display:flex;flex-direction:column;justify-content:center;align-items:center"
+        >
+          <div>
+            <h4>Select Date</h4>
+            <h5>Can be a day or range of days</h5>
+            <vc-date-picker
+              :min-date="today"
+              :disabled-dates="disabled"
+              v-model="range"
+              is-range
+            ></vc-date-picker>
+          </div>
+          <div>
+            <v-btn class="mt-5" @click="sendSchedule">
+              SET SCHEDULE
+            </v-btn>
+          </div>
+        </v-col>
+        <v-col cols="12" class="mx-auto col-lg-9">
+          <v-row>
+            <v-col class="ml-10 ml-lg-0">
+              <h4>
+                Please fill first option first, then fill other options if
+                needed. Option for 8pm is not available due to reserve slot for
+                nutrient preparation process.
+              </h4>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>1)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue1"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration1"
                     label="Duration"
                     v-model="duration1"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration1"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance1"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>2)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue2"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration1"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance1"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>2)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue2"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration2"
                     label="Duration"
                     v-model="duration2"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration2"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance2"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>3)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue3"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration2"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance2"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>3)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue3"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration3"
                     label="Duration"
                     v-model="duration3"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration3"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance3"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>4)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue4"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration3"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance3"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>4)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue4"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration4"
                     label="Duration"
                     v-model="duration4"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration4"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance4"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>5)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue5"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration4"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance4"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>5)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue5"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration5"
                     label="Duration"
                     v-model="duration5"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration5"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance5"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>6)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue6"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration5"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance5"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>6)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue6"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration6"
                     label="Duration"
                     v-model="duration6"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration6"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance6"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>7)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue7"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration6"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance6"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>7)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue7"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration7"
                     label="Duration"
                     v-model="duration7"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration7"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance7"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>8)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue8"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration7"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance7"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>8)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue8"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration8"
                     label="Duration"
                     v-model="duration8"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration8"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance8"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>9)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue9"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration8"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance8"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>9)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue9"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration9"
                     label="Duration"
                     v-model="duration9"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration9"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance9"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-              <v-col cols="12" class="userInput col-md-6">
-                <div>
-                  <label>10)</label>
-                  <vue-timepicker
-                    v-model="yourStringTimeValue10"
-                    format="HH:mm"
-                    :hour-range="[
-                      [0, 19],
-                      [21, 23]
-                    ]"
-                    hide-disabled-hours
-                  ></vue-timepicker>
-                </div>
-                <div class="mx-3">
-                  <!-- <v-select
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration9"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance9"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+            <v-col cols="12" class="userInput col-md-6">
+              <div>
+                <label>10)</label>
+                <vue-timepicker
+                  v-model="yourStringTimeValue10"
+                  format="HH:mm"
+                  :hour-range="[
+                    [0, 19],
+                    [21, 23]
+                  ]"
+                  hide-disabled-hours
+                ></vue-timepicker>
+              </div>
+              <div class="mx-3">
+                <!-- <v-select
                     :items="itemsDuration10"
                     label="Duration"
                     v-model="duration10"
                     class="short"
                   ></v-select> -->
-                  <v-text-field
-                    label="Duration (minute)"
-                    :rules="rules"
-                    type="number"
-                    v-model.number="duration10"
-                    class="short"
-                  ></v-text-field>
-                </div>
-                <div style="">
-                  <v-select
-                    :items="itemsSubstance"
-                    label="Substance"
-                    v-model="substance10"
-                    class="short"
-                  ></v-select>
-                </div>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
-            <TableSchedule
-              :allDate="detail"
-              description="Fertigation / Irrigation schedule"
-              class="mx-10 mb-5"
-            />
-          </v-col>
-        </v-row>
-      </v-card>
-    </client-only>
+                <v-text-field
+                  label="Duration (minute)"
+                  :rules="rules"
+                  type="number"
+                  v-model.number="duration10"
+                  class="short"
+                ></v-text-field>
+              </div>
+              <div style="">
+                <v-select
+                  :items="itemsSubstance"
+                  label="Substance"
+                  v-model="substance10"
+                  class="short"
+                ></v-select>
+              </div>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <TableSchedule
+            :allDate="detail"
+            description="Fertigation / Irrigation schedule"
+            class="mx-10 mb-5"
+          />
+        </v-col>
+      </v-row>
+    </v-card>
+    <!-- </client-only> -->
   </section>
 </template>
 
