@@ -17787,13 +17787,13 @@ const DEFAULTS = {
   $auth.registerStrategy('local', new LocalScheme($auth, {
     "endpoints": {
       "login": {
-        "url": "http://127.0.0.1:5000/api/auth/login",
+        "url": "http://139.59.109.48/api/auth/login",
         "method": "post",
         "propertyName": "token"
       },
       "logout": false,
       "user": {
-        "url": "http://127.0.0.1:5000/api/auth/me",
+        "url": "http://139.59.109.48/api/auth/me",
         "method": "GET",
         "propertyName": false
       }

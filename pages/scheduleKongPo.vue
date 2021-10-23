@@ -623,8 +623,8 @@ export default {
     },
     getScheduleIpah1: function() {
       this.$axios
+        .$get("http://139.59.109.48/api/schedule/kongPo")
         // .$get("http://127.0.0.1:5000/api/schedule/kongPo")
-        .$get("http://127.0.0.1:5000/api/schedule/kongPo")
         .then(response => {
           response.forEach(i => {
             console.log(i);
@@ -637,8 +637,8 @@ export default {
     },
     getScheduleIpah1Nutrient: function() {
       this.$axios
-        .$get("http://127.0.0.1:5000/api/schedule/kongPo/nutrient")
-        // .$get("http://139.59.109.48/api/schedule/kongPo/ipah1")
+        // .$get("http://127.0.0.1:5000/api/schedule/kongPo/nutrient")
+        .$get("http://139.59.109.48/api/schedule/kongPo/nutrient")
         .then(response => {
           response.forEach(i => {
             this.isDateBeforeTodayNutrient(i);
@@ -668,8 +668,8 @@ export default {
     },
     sendScheduleIpah1Nutient: function(date, duration) {
       this.$axios
-        // .$post("http://139.59.109.48/api/setSchedule/kongPo/nutrient", {
-        .$post("http://127.0.0.1:5000/api/setSchedule/kongPo/nutrient", {
+        .$post("http://139.59.109.48/api/setSchedule/kongPo/nutrient", {
+          // .$post("http://127.0.0.1:5000/api/setSchedule/kongPo/nutrient", {
           date: date,
           time: "20:00:00",
           duration: duration

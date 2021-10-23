@@ -8510,7 +8510,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/scheduleKongPo.vue?vue&type=template&id=2781eb40&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/scheduleKongPo.vue?vue&type=template&id=1c86555e&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('section',[_c('PageTitle',{attrs:{"title":"SCHEDULE"}}),_vm._ssrNode(" "),_c('v-card',{staticClass:"mb-10"},[_c('v-card-title',[_vm._v("\n      Set schedule for nutrient preparation\n    ")]),_vm._v(" "),_c('v-row',{staticStyle:{"display":"flex","justify-content":"center","align-items":"center"}},[_c('v-col',{staticClass:"pl-8 col-lg-3 mb-5",staticStyle:{"display":"flex","flex-direction":"column","justify-content":"center","align-items":"center"},attrs:{"cols":"12"}},[_c('div',[_c('h4',[_vm._v("Select Date")]),_vm._v(" "),_c('h5',[_vm._v("Can be a day or range of days")]),_vm._v(" "),_c('vc-date-picker',{attrs:{"min-date":_vm.today,"disabled-dates":_vm.disabledNutrient,"is-range":""},model:{value:(_vm.rangeNutrient),callback:function ($$v) {_vm.rangeNutrient=$$v},expression:"rangeNutrient"}})],1)]),_vm._v(" "),_c('v-col',{staticClass:"mx-auto col-lg-9",attrs:{"cols":"12"}},[_c('v-row',[_c('v-col',{staticClass:"ml-10 ml-lg-0",attrs:{"cols":"4"}},[_c('v-row',[_c('v-col',[_c('h4',[_vm._v("\n                  Default time for nutrient preparation process on selected\n                  date is on 12am. Please select date and duration (minute)\n                  for dosing process.\n                ")])])],1),_vm._v(" "),_c('v-row',[_c('v-col',{staticClass:"userInputNutriet",attrs:{"cols":"12"}},[_c('div',[_c('v-text-field',{staticClass:"long",attrs:{"label":"Duration (minute)","rules":_vm.rules,"type":"number"},model:{value:(_vm.durationNutrient),callback:function ($$v) {_vm.durationNutrient=_vm._n($$v)},expression:"durationNutrient"}})],1),_vm._v(" "),_c('div',[_c('v-btn',{staticClass:"mt-5",on:{"click":_vm.sendScheduleNutrient}},[_vm._v("\n                    SET SCHEDULE\n                  ")])],1)])],1)],1),_vm._v(" "),_c('v-col',{staticClass:"ml-10 ml-lg-0 px-10",attrs:{"cols":"8"}},[_c('TableScheduleNutrient',{attrs:{"allDate":_vm.detailNutrient,"description":"Nutrient preparation schedule"}})],1)],1)],1)],1)],1),_vm._ssrNode(" "),_c('v-card',[_c('v-card-title',[_vm._v("\n      Set schedule for fertigation / irrigation\n    ")]),_vm._v(" "),_c('v-row',[_c('v-col',{staticClass:"pl-8 col-lg-3",staticStyle:{"display":"flex","flex-direction":"column","justify-content":"center","align-items":"center"},attrs:{"cols":"12"}},[_c('div',[_c('h4',[_vm._v("Select Date")]),_vm._v(" "),_c('h5',[_vm._v("Can be a day or range of days")]),_vm._v(" "),_c('vc-date-picker',{attrs:{"min-date":_vm.today,"disabled-dates":_vm.disabled,"is-range":""},model:{value:(_vm.range),callback:function ($$v) {_vm.range=$$v},expression:"range"}})],1),_vm._v(" "),_c('div',[_c('v-btn',{staticClass:"mt-5",on:{"click":_vm.sendSchedule}},[_vm._v("\n            SET SCHEDULE\n          ")])],1)]),_vm._v(" "),_c('v-col',{staticClass:"mx-auto col-lg-9",attrs:{"cols":"12"}},[_c('v-row',[_c('v-col',{staticClass:"ml-10 ml-lg-0"},[_c('h4',[_vm._v("\n              Please fill first option first, then fill other options if\n              needed. Option for 8pm is not available due to reserve slot for\n              nutrient preparation process.\n            ")])])],1),_vm._v(" "),_c('v-row',[_c('v-col',{staticClass:"userInput col-md-6",attrs:{"cols":"12"}},[_c('div',[_c('label',[_vm._v("1)")]),_vm._v(" "),_c('vue-timepicker',{attrs:{"format":"HH:mm","hour-range":[
                   [0, 19],
                   [21, 23]
@@ -8545,7 +8545,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/scheduleKongPo.vue?vue&type=template&id=2781eb40&
+// CONCATENATED MODULE: ./pages/scheduleKongPo.vue?vue&type=template&id=1c86555e&
 
 // EXTERNAL MODULE: external "vue2-timepicker"
 var external_vue2_timepicker_ = __webpack_require__(161);
@@ -9192,8 +9192,8 @@ var external_vuex_ = __webpack_require__(11);
       }
     },
     getScheduleIpah1: function () {
-      this.$axios // .$get("http://127.0.0.1:5000/api/schedule/kongPo")
-      .$get("http://127.0.0.1:5000/api/schedule/kongPo").then(response => {
+      this.$axios.$get("http://139.59.109.48/api/schedule/kongPo") // .$get("http://127.0.0.1:5000/api/schedule/kongPo")
+      .then(response => {
         response.forEach(i => {
           console.log(i);
           this.isDateBeforeToday(i);
@@ -9203,8 +9203,8 @@ var external_vuex_ = __webpack_require__(11);
       });
     },
     getScheduleIpah1Nutrient: function () {
-      this.$axios.$get("http://127.0.0.1:5000/api/schedule/kongPo/nutrient") // .$get("http://139.59.109.48/api/schedule/kongPo/ipah1")
-      .then(response => {
+      this.$axios // .$get("http://127.0.0.1:5000/api/schedule/kongPo/nutrient")
+      .$get("http://139.59.109.48/api/schedule/kongPo/nutrient").then(response => {
         response.forEach(i => {
           this.isDateBeforeTodayNutrient(i);
         });
@@ -9228,8 +9228,8 @@ var external_vuex_ = __webpack_require__(11);
       });
     },
     sendScheduleIpah1Nutient: function (date, duration) {
-      this.$axios // .$post("http://139.59.109.48/api/setSchedule/kongPo/nutrient", {
-      .$post("http://127.0.0.1:5000/api/setSchedule/kongPo/nutrient", {
+      this.$axios.$post("http://139.59.109.48/api/setSchedule/kongPo/nutrient", {
+        // .$post("http://127.0.0.1:5000/api/setSchedule/kongPo/nutrient", {
         date: date,
         time: "20:00:00",
         duration: duration
