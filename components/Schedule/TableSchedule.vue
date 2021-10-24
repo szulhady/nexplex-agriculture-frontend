@@ -1,33 +1,14 @@
 <template>
   <div>
     <v-card class="elevation-12 card-border card-color">
-      <v-card-title class="color no-padding">Schedule Set</v-card-title>
+      <v-card-title class="color no-padding">{{ description }}</v-card-title>
       <v-data-table
         :headers="headers"
         :items="allDate"
         :items-per-page="5"
         @click:row="handleClick"
       >
-        <!-- <template v-slot:top="{ pagination, options, updateOptions }">
-          <v-data-footer
-            :pagination="pagination"
-            :options="options"
-            @update:options="updateOptions"
-            items-per-page-text="$vuetify.dataTable.itemsPerPageText"
-          /> </template
-      > -->
       </v-data-table>
-      <!-- hide-default-footer -->
-      <!-- <hr class="hr" /> -->
-      <!-- <Duration duration="Updated just now" /> -->
-      <!-- <v-row>
-        <v-col class="flex-card">
-          <v-icon class="mdi mdi-refresh" size="20" color="grey"></v-icon>
-          <v-card-subtitle class="card-subtitle">{{
-            duration
-          }}</v-card-subtitle>
-        </v-col>
-      </v-row> -->
     </v-card>
     <v-scroll-y-transition>
       <div class="layer2" v-if="box" id="layer"></div>
@@ -56,7 +37,6 @@
 </template>
 
 <script>
-import Duration from "~/components/Duration";
 import { mapState, mapMutations } from "vuex";
 export default {
   data() {
@@ -72,57 +52,6 @@ export default {
         { text: "Remarks", value: "remarks" }
         // { text: "Block", value: "block" },
         // { text: "Duration (min)", value: "duration" }
-      ],
-      status2: [
-        {
-          name: "Soil NPK",
-
-          remarks: ""
-        },
-        {
-          name: "Soil pH",
-
-          remarks: ``
-        },
-        {
-          name: "Soil EC",
-
-          remarks: ""
-        },
-        {
-          name: "Soil Moisture",
-          remarks: ""
-        },
-        {
-          name: "Soil Temperature",
-
-          remarks: ""
-        },
-        {
-          name: "Leaf Temperature",
-
-          remarks: ""
-        },
-        {
-          name: "Humidity",
-
-          remarks: ""
-        },
-        {
-          name: "Water NPK",
-
-          remarks: ""
-        },
-        {
-          name: "Water pH",
-
-          remarks: ""
-        },
-        {
-          name: "Water EC",
-
-          remarks: ""
-        }
       ]
     };
   },
@@ -133,7 +62,7 @@ export default {
       // duration: state => state.duration
     })
   },
-  props: ["allDate"],
+  props: ["allDate", "description"],
   mounted() {
     // console.log(this.allDate);
   },

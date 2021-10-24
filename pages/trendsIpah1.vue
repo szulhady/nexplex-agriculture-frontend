@@ -72,7 +72,8 @@ export default {
       indexSensor
     ) {
       this.$axios
-        .$get(`http://139.59.109.48/api/daily/`, {
+        .$get(`http://127.0.0.1:5000/api/daily/`, {
+          // .$get(`http://139.59.109.48/api/daily/`, {
           // .$get(`/api/daily`, {
           params: {
             // .$get("/api/weekly/",{params:{

@@ -72,7 +72,7 @@
 <script>
 import { IsHigh } from "~/src/class";
 
-import { mapGetters, mapMutations } from "vuex";
+import { mapState, mapGetters, mapMutations } from "vuex";
 import mqtt from "mqtt";
 export default {
   data() {
@@ -83,6 +83,12 @@ export default {
       right: true,
       rightDrawer: false,
       items: [
+        // {
+        //   icon: "mdi-view-dashboard",
+        //   title: "USER",
+        //   state: this.$auth.hasScope("user"),
+        //   to: "/detail"
+        // },
         {
           icon: "mdi-view-dashboard",
           title: "OVERVIEW",
@@ -121,7 +127,7 @@ export default {
         },
         {
           icon: "mdi-desktop-classic",
-          title: "STATUS",
+          title: "CONTROL PANEL",
           state:
             this.$auth.hasScope("user") &&
             this.$auth.$state.user.station[0] == "kongPo",
@@ -207,6 +213,15 @@ export default {
             this.$auth.$state.user.station[0] == "tkpmPagoh",
           // this.$auth.user.userId == 8,
           to: "/trendsTkpmPagoh"
+        },
+        {
+          icon: "mdi-chart-areaspline",
+          title: "TRENDS",
+          state:
+            this.$auth.hasScope("user") &&
+            this.$auth.$state.user.station[0] == "kongPo",
+          // this.$auth.user.userId == 8,
+          to: "/trendsKongPo"
         }
       ],
       miniVariant: false,
@@ -221,7 +236,7 @@ export default {
       },
       subscription: {
         // topic: "geyzer/#",
-        topic: "debug/nexplex/sense/#",
+        topic: "nexplex/sense/#",
         qos: 0
       },
       receiveNews: "",
@@ -248,12 +263,17 @@ export default {
       getCurrentDataTkpmPagoh: "getCurrentDataTkpmPagoh",
       getCurrentTimeArrayTkpmPagoh: "getCurrentTimeArrayTkpmPagoh",
       getCurrentDataArrayTkpmPagoh: "getCurrentDataArrayTkpmPagoh",
+      getCurrentDataKongPo: "getCurrentDataKongPo",
+      getCurrentTimeArrayKongPo: "getCurrentTimeArrayKongPo",
+      getCurrentDataArrayKongPo: "getCurrentDataArrayKongPo",
+
       checkWarning: "checkWarning",
       countWarningsIpah: "countWarningsIpah",
       countWarningsTkpmIpah: "countWarningsTkpmIpah",
       countWarningsTkpmPagoh: "countWarningsTkpmPagoh",
       stringArray: "stringArray",
-      ipahStatus: "ipahStatus"
+      ipahStatus: "ipahStatus",
+      SET_WEATHER: "SET_WEATHER"
     }),
     logout: async function() {
       await this.$auth.logout();
@@ -342,9 +362,9 @@ export default {
         console.log("Connection failed", error);
       });
       this.client.on("message", (topic, message) => {
-        if (topic === "debug/nexplex/sense/ipah/block1") {
+        if (topic === "nexplex/sense/ipah/block1") {
           message = JSON.parse(message);
-          console.log("block 1", message, new Date());
+          // console.log("block 1", message, new Date());
           let payload = {
             station: 0,
             block: 0,
@@ -392,9 +412,9 @@ export default {
           this.countWarningsIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/ipah/block2") {
+        if (topic === "nexplex/sense/ipah/block2") {
           message = JSON.parse(message);
-          console.log("block 2", message, new Date());
+          // console.log("block 2", message, new Date());
           let payload = {
             station: 0,
             block: 1,
@@ -441,7 +461,7 @@ export default {
           this.countWarningsIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/ipah/block3") {
+        if (topic === "nexplex/sense/ipah/block3") {
           message = JSON.parse(message);
           let payload = {
             station: 0,
@@ -489,7 +509,7 @@ export default {
           this.countWarningsIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/ipah/block4") {
+        if (topic === "nexplex/sense/ipah/block4") {
           message = JSON.parse(message);
           let payload = {
             station: 0,
@@ -537,7 +557,7 @@ export default {
           this.countWarningsIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/tkpmIpah/block1") {
+        if (topic === "nexplex/sense/tkpmIpah/block1") {
           message = JSON.parse(message);
           let payload = {
             station: 1,
@@ -572,7 +592,7 @@ export default {
           this.countWarningsTkpmIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/tkpmIpah/block2") {
+        if (topic === "nexplex/sense/tkpmIpah/block2") {
           message = JSON.parse(message);
           let payload = {
             station: 1,
@@ -605,7 +625,7 @@ export default {
           this.countWarningsTkpmIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/tkpmIpah/block3") {
+        if (topic === "nexplex/sense/tkpmIpah/block3") {
           message = JSON.parse(message);
           let payload = {
             station: 1,
@@ -638,7 +658,7 @@ export default {
           this.countWarningsTkpmIpah(data);
         }
 
-        if (topic === "debug/nexplex/sense/tkpmPagoh/block1") {
+        if (topic === "nexplex/sense/tkpmPagoh/block1") {
           message = JSON.parse(message);
           let payload = {
             station: 2,
@@ -672,7 +692,7 @@ export default {
           this.countWarningsTkpmPagoh(data);
         }
 
-        if (topic === "debug/nexplex/sense/tkpmPagoh/block2") {
+        if (topic === "nexplex/sense/tkpmPagoh/block2") {
           message = JSON.parse(message);
           let payload = {
             station: 2,
@@ -705,7 +725,7 @@ export default {
           this.countWarningsTkpmPagoh(data);
         }
 
-        if (topic === "debug/nexplex/sense/tkpmPagoh/block3") {
+        if (topic === "nexplex/sense/tkpmPagoh/block3") {
           message = JSON.parse(message);
           let payload = {
             station: 2,
@@ -736,6 +756,71 @@ export default {
           this.addDataTkpmPagoh(2);
           let data = { station: 2, block: 3 };
           this.countWarningsTkpmPagoh(data);
+        }
+
+        if (topic === "nexplex/sense") {
+          message = JSON.parse(message);
+          console.log(message);
+          if (message.ID == 301) {
+            let payload1 = {
+              station: 3,
+              block: 0,
+              soilNitrogen: message.NTR1,
+              soilPhosphorus: message.PHOS1,
+              soilPotassium: message.POT1,
+              soilPH: message.pH1,
+              soilEC: message.EC1,
+              soilMS: message.HMD1
+            };
+            let payload2 = {
+              station: 3,
+              block: 1,
+              soilNitrogen: message.NTR2,
+              soilPhosphorus: message.PHOS2,
+              soilPotassium: message.POT2,
+              soilPH: message.pH2,
+              soilEC: message.EC2,
+              soilMS: message.HMD2
+            };
+            this.getCurrentDataKongPo(payload1);
+            this.getCurrentDataKongPo(payload2);
+            this.check(3, 0, 0, " Nitrogen", message.NTR1, 20);
+            this.check(3, 0, 1, " Phosphorus", message.PHOS1, 20);
+            this.check(3, 0, 2, " Potassium", message.POT1, 20);
+            this.check(3, 0, 3, " pH", message.pH1, 7);
+            this.check(3, 0, 4, " EC", message.EC1, 10);
+            this.check(3, 0, 5, " MS", message.HMD1, 10);
+
+            this.check(3, 1, 0, " Nitrogen", message.NTR2, 20);
+            this.check(3, 1, 1, " Phosphorus", message.PHOS2, 20);
+            this.check(3, 1, 2, " Potassium", message.POT2, 20);
+            this.check(3, 1, 3, " pH", message.pH2, 7);
+            this.check(3, 1, 4, " EC", message.EC2, 10);
+            this.check(3, 1, 5, " MS", message.HMD2, 10);
+
+            const payloadStringArray = {
+              indexStation: 0,
+              indexBlock: 0
+            };
+            this.stringArray(payloadStringArray);
+            const val = [
+              "soilNitrogen",
+              "soilPhosphorus",
+              "soilPotassium",
+              "soilPH",
+              "soilEC",
+              "soilMS",
+              "soilTEMP"
+            ];
+            // //currentTrend
+            for (let j = 0; j < val.length; j++) {
+              let sensor = val[j];
+              let indexStation = 0;
+              let indexSensor = j;
+              let data = { sensor, indexStation, indexSensor };
+              this.getCurrentDataArrayIpah1(data);
+            }
+          }
         }
       });
     },
@@ -772,20 +857,81 @@ export default {
         };
         this.checkWarning(payload);
       }
+    },
+    getWeatherIpah1: function() {
+      this.$axios
+        .$get("http://127.0.0.1:5000/api/openWeatherMap/ipah1")
+        .then(response => {
+          console.log(response);
+          this.SET_WEATHER(response);
+          // window.location.reload();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    getWeatherIpah2: function() {
+      this.$axios
+        .$get("http://127.0.0.1:5000/api/openWeatherMap/ipah2")
+        .then(response => {
+          console.log(response);
+          this.SET_WEATHER(response);
+          // window.location.reload();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    getWeatherPagoh: function() {
+      this.$axios
+        .$get("http://127.0.0.1:5000/api/openWeatherMap/tkpmPagoh")
+        .then(response => {
+          console.log(response);
+          this.SET_WEATHER(response);
+          // window.location.reload();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    getWeatherKongPo: function() {
+      this.$axios
+        .$get("http://127.0.0.1:5000/api/openWeatherMap/kongPo")
+        .then(response => {
+          console.log(response);
+          this.SET_WEATHER(response);
+          // window.location.reload();
+        })
+        .catch(error => {
+          console.log(error);
+        });
     }
   },
   computed: {
-    ...mapGetters(["loggedInUser", "isAuthenticated"])
+    ...mapGetters(["loggedInUser", "isAuthenticated"]),
+    ...mapState({
+      weather: state => state.weatherIpah
+    })
   },
   async created() {
     // this.$store.dispatch("setForecasts");
     this.setActiveUser();
+    // this.$store.dispatch("setForecasts");
   },
   async mounted() {
     let elHtml = document.getElementsByTagName("html")[0];
     elHtml.style.overflowY = null;
     this.createConnection();
     this.doSubscribe();
+    if (this.$auth.$state.user.station[0] == "ipah1") {
+      this.getWeatherIpah1();
+    } else if (this.$auth.$state.user.station[0] == "ipah2") {
+      this.getWeatherIpah2();
+    } else if (this.$auth.$state.user.station[0] == "tkpmPagoh") {
+      this.getWeatherPagoh();
+    } else if (this.$auth.$state.user.station[0] == "kongPo") {
+      this.getWeatherKongPo();
+    }
   }
 };
 </script>

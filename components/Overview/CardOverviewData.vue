@@ -2,29 +2,6 @@
   <div>
     <v-card class="card-color elevation-12 ">
       <v-card-title class="color mb-4">REAL-TIME DATA</v-card-title>
-      <!-- <v-row style="display:flex; justify-content:space-evenly">
-        <v-col
-          v-for="(category, index) in stations[0].sensorSoil"
-          :key="index"
-          cols="3"
-          class="mb-3 categories-container"
-        >
-          <v-card
-            @click="button(index)"
-            :class="{ active: index === activeStation }"
-            class="category elevation-10"
-          >
-            <v-img
-              :src="category.image"
-              class="station-img"
-              max-height="120px"
-            ></v-img>
-            <v-card-title class="button" style="justify-content:center">
-              {{ category.block }}
-            </v-card-title>
-          </v-card>
-        </v-col>
-      </v-row> -->
       <v-row style="display:flex; justify-content:space-evenly">
         <v-col
           v-for="(category, index) in stations[activeUser].sensorType"
