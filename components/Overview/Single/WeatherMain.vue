@@ -3,7 +3,7 @@
     <v-card-subtitle>
       Today...
     </v-card-subtitle>
-    <v-card-title class="display-2"> {{ feels_like }} °C </v-card-title>
+    <v-card-title class="display-3"> {{ data.temperature }} °C </v-card-title>
     <div class="d-flex align-center">
       <!-- <div class="icon sunny">
         <div class="sun">
@@ -39,12 +39,12 @@
       </div>
 
       <div>
-        <v-card-subtitle> Humidity: {{ humidity }}% </v-card-subtitle>
-        <!-- <v-card-subtitle> Rainfall: {{ data.rainfall }}mm </v-card-subtitle> -->
+        <v-card-subtitle> Humidity: {{ data.humidity }}% </v-card-subtitle>
+        <v-card-subtitle> Rainfall: {{ data.rainfall }}mm </v-card-subtitle>
         <v-card-subtitle>
-          Wind: {{ windSpeed }}m/s, {{ windDeg }}°
+          Wind: {{ data.windSpeed }}m/s, {{ data.windDirection }}°
         </v-card-subtitle>
-        <v-card-subtitle> Pressure: {{ pressure }}Pa </v-card-subtitle>
+        <v-card-subtitle> Pressure: {{ data.pressure }}Pa </v-card-subtitle>
       </div>
     </div>
   </v-card>
@@ -55,15 +55,7 @@ export default {
   data() {
     return {};
   },
-  props: [
-    "weather",
-    "feels_like",
-    "data",
-    "humidity",
-    "windSpeed",
-    "windDeg",
-    "pressure"
-  ]
+  props: ["weather", "data"]
 };
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <v-card class="elevation-10 weather-card py-5 rounded-xl" style="width:150px">
     <v-card-subtitle>
-      {{ date }}
-      <!-- {{ date.slice(0, -9) }} -->
+      <!-- {{ date }} -->
+      {{ date.slice(0, -9) }}
     </v-card-subtitle>
     <div v-if="weather === 'Clear'" class="icon sunny">
       <div class="sun">
@@ -31,34 +31,17 @@
       <div class="cloud"></div>
       <div class="rain"></div>
     </div>
-    <div v-if="weather === 'light rain'" class="icon rainy">
-      <div class="cloud"></div>
-      <div class="rain"></div>
-    </div>
-    <div v-if="weather === 'moderate rain'" class="icon rainy">
-      <div class="cloud"></div>
-      <div class="rain"></div>
-    </div>
+
+    <v-card-subtitle> {{ temp }} °C </v-card-subtitle>
     <v-card-subtitle>
       {{ description }}
     </v-card-subtitle>
-    <v-card-subtitle> Feels like: {{ feels_like }} °C </v-card-subtitle>
-    <v-card-subtitle> Temp max: {{ temp_max }} °C </v-card-subtitle>
-    <v-card-subtitle> Temp min: {{ temp_min }} °C </v-card-subtitle>
   </v-card>
 </template>
 
 <script>
 export default {
-  props: [
-    "day",
-    "weather",
-    "feels_like",
-    "temp_max",
-    "temp_min",
-    "description",
-    "date"
-  ]
+  props: ["day", "weather", "temp", "description", "date"]
 };
 </script>
 
@@ -67,7 +50,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px !important;
+  /* width: 300px; */
   /* height: 320px; */
   background: #11270b !important;
   color: white !important;

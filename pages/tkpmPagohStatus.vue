@@ -10,48 +10,27 @@
           <TkpmPagohStatus
             sv1="red"
             sv2="green"
-            :classSV1="tkpmPagohStatus.SV1 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV2="tkpmPagohStatus.SV2 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV3="tkpmPagohStatus.SV3 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV4="tkpmPagohStatus.SV4 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV5="tkpmPagohStatus.SV5 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV6="tkpmPagohStatus.SV6 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV7="tkpmPagohStatus.SV7 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV8="tkpmPagohStatus.SV8 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV9="tkpmPagohStatus.SV9 == 1 ? 'filter-green' : 'filter-red'"
-            :classSV10="
-              tkpmPagohStatus.SV10 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classSV11="
-              tkpmPagohStatus.SV11 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classSV12="
-              tkpmPagohStatus.SV12 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classSV13="
-              tkpmPagohStatus.SV13 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classSV14="
-              tkpmPagohStatus.SV14 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classDosingPump1="
-              tkpmPagohStatus.DP1 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classDosingPump2="
-              tkpmPagohStatus.DP2 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classPump1="
-              tkpmPagohStatus.P1 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classPump2="
-              tkpmPagohStatus.P2 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classPump3="
-              tkpmPagohStatus.P3 == 1 ? 'filter-green' : 'filter-red'
-            "
-            :classPumpNaturalWater="
-              tkpmPagohStatus.PNW == 1 ? 'filter-green' : 'filter-red'
-            "
+            classSV1="filter-green"
+            classSV2="filter-red"
+            classSV3="filter-red"
+            classSV4="filter-green"
+            classSV5="filter-red"
+            classSV6="filter-red"
+            classSV7="filter-green"
+            classSV8="filter-red"
+            classSV9="filter-red"
+            classSV10="filter-green"
+            classSV11="filter-red"
+            classSV12="filter-red"
+            classSV13="filter-green"
+            classSV14="filter-red"
+            classPump="filter-green"
+            classDosingPump1="filter-red"
+            classDosingPump2="filter-green"
+            classPumpNaturalWater="filter-green"
+            classPump1="filter-red"
+            classPump2="filter-red"
+            classPump3="filter-red"
             ph="7"
             waterLvl="30"
             EC1="2"
@@ -62,14 +41,8 @@
         <v-col
           cols="12"
           class="col-lg-3 pr-lg-10 pt-0"
-          style="display:flex;justify-content:center; align-items:center; flex-direction:column"
+          style="display:flex;justify-contents:center; align-items:center"
         >
-          <v-card class="elevation-18 rounded-lg px-5 mb-5 ">
-            <v-card-title>PROCESS</v-card-title>
-            <v-card-subtitle style="font-size:1.2em">
-              {{ tkpmPagohProcess }}
-            </v-card-subtitle>
-          </v-card>
           <v-card class="elevation-18 rounded-lg px-5 ">
             <v-card-title style="font-size:1.3rem">
               MANUAL FERTIGATION CONTROL
@@ -77,28 +50,13 @@
             <v-row>
               <v-col>
                 <v-card-title>
-                  Water Filling for fetilizer solution tank
-                </v-card-title>
-                <div>
-                  <h4>
-                    Press FILL button to start filling water manually into
-                    fetilizer solution tank. Press STOP button to stop filling
-                    process.
-                  </h4>
-                  <div style="display:flex; justify-content:space-evenly">
-                    <v-btn @click="fill" class="mt-4 mb-4">FILL</v-btn>
-                    <v-btn @click="stop" class="mt-4 mb-4">STOP</v-btn>
-                  </div>
-                </div>
-                <v-card-title>
                   Nutrient Preparation
                 </v-card-title>
                 <div>
                   <h4>
-                    Nutrient preparation is done via schedule set by user on
-                    schedule panel. It is done on 11.00pm on choosen date.
-                    Please fill duration input and click button below to start
-                    nutrient preparation manually.
+                    Nutrient preparation is done twice a day. It is done on
+                    7.00am and 1.00pm on a daily basis. Please click button
+                    below to start nutrient preparation manually.
                   </h4>
                 </div>
                 <div style="display:flex; justify-content:center">
@@ -106,6 +64,135 @@
                 </div>
               </v-col>
             </v-row>
+            <!-- <v-row>
+              <v-col>
+                <v-card-title>
+                  DRIPPING
+                </v-card-title>
+                <div style="display:flex; justify-content:space-evenly">
+                  <div>
+                    <v-select
+                      v-model="substance"
+                      :items="itemsSubstance"
+                      label="Substance"
+                      class="short"
+                    ></v-select>
+                  </div>
+                  <div>
+                    <v-select
+                      v-model="block"
+                      :items="itemsBlock"
+                      label="Block"
+                      multiple
+                      class="short"
+                    ></v-select>
+                  </div>
+                </div>
+                <v-card-subtitle style="font-size:1rem;  line-height: 200%;">
+                  Dripping using &nbsp;
+                  <span
+                    style="border-bottom: 1px solid black; padding-bottom:3px"
+                  >
+                    {{ substance }}</span
+                  >
+                  &nbsp; on &nbsp;
+                  <span
+                    style="border-bottom: 1px solid black; padding-bottom:3px"
+                    >{{ block }}</span
+                  >
+                </v-card-subtitle>
+                <div
+                  style="display:flex; justify-content:center"
+                  class="mt-3 mb-5"
+                >
+                  <v-btn>Start Dripping</v-btn>
+                </div>
+              </v-col>
+            </v-row> -->
+            <!-- <v-row>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch ">
+                <v-switch
+                  v-model="switchPump"
+                  :label="`Pump`"
+                  color="success"
+                  inset
+                  @click="trigger('pump', switchPump, 'switchPump')"
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchDosingPump"
+                  :label="`Dosing Pump`"
+                  color="success"
+                  inset
+                  @click="
+                    trigger('dosing pump', switchDosingPump, 'switchDosingPump')
+                  "
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchSV1"
+                  :label="`SV1`"
+                  color="success"
+                  inset
+                  @click="trigger('SV1', switchSV1, 'switchSV1')"
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchSV2"
+                  :label="`SV2`"
+                  color="success"
+                  inset
+                  @click="trigger('SV2', switchSV2, 'switchSV2')"
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchSV3"
+                  :label="`SV3`"
+                  color="success"
+                  inset
+                  @click="trigger('SV3', switchSV3, 'switchSV3')"
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchSV4"
+                  :label="`SV4`"
+                  color="success"
+                  inset
+                  @click="trigger('SV4', switchSV4, 'switchSV4')"
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchSV5"
+                  :label="`SV5`"
+                  color="success"
+                  inset
+                  @click="trigger('SV5', switchSV5, 'switchSV5')"
+                  readonly
+                ></v-switch>
+              </v-col>
+              <v-col cols="4" class="col-md-12 col-lg-6 switch">
+                <v-switch
+                  v-model="switchSV6"
+                  :label="`SV6`"
+                  color="success"
+                  inset
+                  @click="trigger('SV6', switchSV6, 'switchSV6')"
+                  readonly
+                ></v-switch>
+              </v-col>
+            </v-row> -->
           </v-card>
         </v-col>
       </v-row>
@@ -140,18 +227,12 @@ import TkpmPagohStatus from "~/components/Status/TkpmPagohStatus.vue";
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
-import { mapState, mapMutations } from "vuex";
-
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 
 export default {
   middleware: ["isTkpmPagoh"],
   layout: "status",
   methods: {
-    ...mapMutations({
-      setTkpmPagohManualFill: "setTkpmPagohManualFill",
-      setTkpmPagohManualStop: "setTkpmPagohManualStop"
-    }),
     trigger: function(device, state, deviceName) {
       this.state2 = false;
       this.layerDrawer = true;
@@ -182,14 +263,6 @@ export default {
           this.layerDrawer = false;
         }
       };
-    },
-    fill: function() {
-      this.setTkpmPagohManualFill(true);
-      console.log("fill");
-    },
-    stop: function() {
-      this.setTkpmPagohManualStop(true);
-      console.log("stop");
     }
   },
   data() {
@@ -234,12 +307,6 @@ export default {
       block: [],
       itemsBlock: ["Block 1", "Block 2", "Block 3"]
     };
-  },
-  computed: {
-    ...mapState({
-      tkpmPagohStatus: state => state.tkpmPagohStatus,
-      tkpmPagohProcess: state => state.tkpmPagohProcess
-    })
   },
   components: {
     PageTitle,
